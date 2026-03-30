@@ -6,8 +6,9 @@ Scholarship Dashboard - Flask App
 import os
 import json
 import logging
+import hashlib
 from datetime import datetime
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, abort
 import requests
 from bs4 import BeautifulSoup
 from apscheduler.schedulers.background import BackgroundScheduler
@@ -38,6 +39,7 @@ def load_scholarships():
     return []
 
 def save_scholarships(data):
+    ensure_ids(data)
     with open(DATA_FILE, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
     with open(LAST_UPDATE_FILE, 'w') as f:
@@ -54,6 +56,17 @@ def matches_keywords(text):
         return False
     text_lower = text.lower()
     return any(kw.lower() in text_lower for kw in TARGET_KEYWORDS)
+
+def generate_id(title):
+    """สร้าง ID จากชื่อทุน"""
+    return hashlib.md5(title.encode('utf-8')).hexdigest()[:8]
+
+def ensure_ids(data):
+    """เพิ่ม id ให้ทุนที่ยังไม่มี"""
+    for item in data:
+        if 'id' not in item:
+            item['id'] = generate_id(item['title'])
+    return data
 
 def scrape_nrct():
     """สำนักงานการวิจัยแห่งชาติ (NRCT)"""
@@ -320,7 +333,15 @@ def scrape():
 
 @app.route('/api/scholarships')
 def api_scholarships():
-    return jsonify(load_scholarships())
+    return jsonify(ensure_ids(load_scholarships()))
+
+@app.route('/scholarship/<scholarship_id>')
+def scholarship_detail(scholarship_id):
+    scholarships = ensure_ids(load_scholarships())
+    for s in scholarships:
+        if s.get('id') == scholarship_id:
+            return render_template('detail.html', s=s)
+    abort(404)
 
 # ============ Start ============
 if __name__ == '__main__':
@@ -330,4 +351,4 @@ if __name__ == '__main__':
         run_scrape()
     
     scheduler.start()
-    app.run(host='0.0.0.0', port=5000, debug=False)
+    app.run(host='0.0.0.0', port=5010, debug=False)
