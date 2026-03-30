@@ -72,28 +72,43 @@ def scrape_nrct():
     """สำนักงานการวิจัยแห่งชาติ (NRCT)"""
     results = []
     try:
-        url = 'https://www.nrct.go.th/'
-        headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
-        resp = requests.get(url, headers=headers, timeout=15)
-        soup = BeautifulSoup(resp.text, 'lxml')
-        # แยกวิเคราะห์ตามโครงสร้างจริงของเว็บ
-        for item in soup.select('a, div, section'):
-            title = item.get_text(strip=True)
-            if len(title) > 10 and matches_keywords(title):
-                link = item.get('href', '')
-                if link:
-                    if not link.startswith('http'):
-                        link = 'https://www.nrct.go.th' + link
-                    results.append({
-                        'title': title[:200],
-                        'provider': 'NRCT - สำนักงานการวิจัยแห่งชาติ',
-                        'deadline': 'ตรวจสอบจากลิงก์',
-                        'eligibility': 'นักวิจัยไทย',
-                        'amount': 'ตามประกาศ',
-                        'link': link,
-                        'category': 'research',
-                        'field': 'ทั่วไป'
-                    })
+        # ลองดึงข้อมูลจากหน้าข่าวหลักของ NRCT
+        urls_to_try = [
+            'https://www.nrct.go.th/News',
+            'https://www.nrct.go.th/th/news',
+            'https://www.nrct.go.th/',
+        ]
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+            'Accept-Language': 'th-TH,th;q=0.9,en;q=0.8',
+        }
+        for url in urls_to_try:
+            try:
+                resp = requests.get(url, headers=headers, timeout=15, allow_redirects=True)
+                if resp.status_code == 200:
+                    soup = BeautifulSoup(resp.text, 'lxml')
+                    # ค้นหาลิงก์ที่เกี่ยวข้องกับทุนวิจัย
+                    for item in soup.find_all('a', href=True):
+                        title = item.get_text(strip=True)
+                        href = item.get('href', '')
+                        if len(title) > 15 and matches_keywords(title):
+                            if not href.startswith('http'):
+                                href = 'https://www.nrct.go.th' + href
+                            results.append({
+                                'title': title[:200],
+                                'provider': 'สำนักงานการวิจัยแห่งชาติ (NRCT)',
+                                'deadline': 'ตรวจสอบจากลิงก์',
+                                'eligibility': 'นักวิจัยไทย',
+                                'amount': 'ตามประกาศ',
+                                'link': href,
+                                'category': 'research',
+                                'field': 'ทั่วไป'
+                            })
+                    if results:
+                        break  # ถ้าเจอข้อมูลแล้วหยุด
+            except Exception:
+                continue
     except Exception as e:
         logger.warning(f'NRCT scrape error: {e}')
     return results[:20]
@@ -102,57 +117,83 @@ def scrape_nia():
     """สำนักงานนวัตกรรมแห่งชาติ (NIA)"""
     results = []
     try:
-        url = 'https://www.nia.or.th/'
-        headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
-        resp = requests.get(url, headers=headers, timeout=15)
-        soup = BeautifulSoup(resp.text, 'lxml')
-        for item in soup.find_all('a'):
-            title = item.get_text(strip=True)
-            if len(title) > 10 and matches_keywords(title):
-                link = item.get('href', '')
-                if link:
-                    if not link.startswith('http'):
-                        link = 'https://www.nia.or.th' + link
-                    results.append({
-                        'title': title[:200],
-                        'provider': 'NIA - สำนักงานนวัตกรรมแห่งชาติ',
-                        'deadline': 'ตรวจสอบจากลิงก์',
-                        'eligibility': 'ผู้ประกอบการ/นักวิจัย',
-                        'amount': 'ตามประกาศ',
-                        'link': link,
-                        'category': 'research',
-                        'field': 'นวัตกรรม'
-                    })
+        # ดึงข้อมูลจากหน้าหลักและหน้าค้นหาของ NIA
+        urls_to_try = [
+            'https://www.nia.or.th/',
+            'https://www.nia.or.th/advance_search/NIA',
+        ]
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+            'Accept-Language': 'th-TH,th;q=0.9,en;q=0.8',
+        }
+        for url in urls_to_try:
+            try:
+                resp = requests.get(url, headers=headers, timeout=15, allow_redirects=True)
+                if resp.status_code == 200:
+                    soup = BeautifulSoup(resp.text, 'lxml')
+                    for item in soup.find_all('a', href=True):
+                        title = item.get_text(strip=True)
+                        href = item.get('href', '')
+                        if len(title) > 15 and matches_keywords(title):
+                            if not href.startswith('http'):
+                                href = 'https://www.nia.or.th' + href
+                            results.append({
+                                'title': title[:200],
+                                'provider': 'สำนักงานนวัตกรรมแห่งชาติ (NIA)',
+                                'deadline': 'ตรวจสอบจากลิงก์',
+                                'eligibility': 'ผู้ประกอบการ/นักวิจัย',
+                                'amount': 'ตามประกาศ',
+                                'link': href,
+                                'category': 'research',
+                                'field': 'นวัตกรรม'
+                            })
+                    if results:
+                        break
+            except Exception:
+                continue
     except Exception as e:
         logger.warning(f'NIA scrape error: {e}')
     return results[:15]
 
 def scrape_nstd():
-    """สถาบันนโยบายวิทยาศาสตร์และเทคโนโลยีแห่งชาติ"""
+    """สถาบันนโยบายวิทยาศาสตร์และเทคโนโลยีแห่งชาติ (NSTDA/สวทช.)"""
     results = []
     try:
-        url = 'https://www.nstda.or.th/'
-        headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
-        resp = requests.get(url, headers=headers, timeout=15)
-        soup = BeautifulSoup(resp.text, 'lxml')
-        for item in soup.find_all(['a', 'div', 'section']):
-            title = item.get_text(strip=True)
-            if len(title) > 10 and matches_keywords(title):
-                link = item.find('a')
-                href = link.get('href', '') if link else ''
-                if href:
-                    if not href.startswith('http'):
-                        href = 'https://www.nstda.or.th' + href
-                    results.append({
-                        'title': title[:200],
-                        'provider': 'NSTDA - สถาบันนโยบายวิทยาศาสตร์',
-                        'deadline': 'ตรวจสอบจากลิงก์',
-                        'eligibility': 'นักวิจัย/ภาคเอกชน',
-                        'amount': 'ตามประกาศ',
-                        'link': href,
-                        'category': 'research',
-                        'field': 'วิทยาศาสตร์'
-                    })
+        urls_to_try = [
+            'https://www.nstda.or.th/',
+            'https://www.nstda.or.th/en/',
+        ]
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+            'Accept-Language': 'th-TH,th;q=0.9,en;q=0.8',
+        }
+        for url in urls_to_try:
+            try:
+                resp = requests.get(url, headers=headers, timeout=15, allow_redirects=True)
+                if resp.status_code == 200:
+                    soup = BeautifulSoup(resp.text, 'lxml')
+                    for item in soup.find_all('a', href=True):
+                        title = item.get_text(strip=True)
+                        href = item.get('href', '')
+                        if len(title) > 15 and matches_keywords(title):
+                            if not href.startswith('http'):
+                                href = 'https://www.nstda.or.th' + href
+                            results.append({
+                                'title': title[:200],
+                                'provider': 'สถาบันนโยบายวิทยาศาสตร์และเทคโนโลยีแห่งชาติ (NSTDA)',
+                                'deadline': 'ตรวจสอบจากลิงก์',
+                                'eligibility': 'นักวิจัย/ภาคเอกชน',
+                                'amount': 'ตามประกาศ',
+                                'link': href,
+                                'category': 'research',
+                                'field': 'วิทยาศาสตร์/เทคโนโลยี'
+                            })
+                    if results:
+                        break
+            except Exception:
+                continue
     except Exception as e:
         logger.warning(f'NSTDA scrape error: {e}')
     return results[:15]

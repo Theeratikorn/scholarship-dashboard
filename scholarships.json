@@ -5,10 +5,11 @@
     "deadline": "2026-06-30",
     "eligibility": "นักวิจัยไทย สาขาวิศวกรรมเครื่องกล",
     "amount": "ไม่เกิน 1,000,000 บาท",
-    "link": "https://www.nrct.go.th/news/grant",
+    "link": "https://www.nrct.go.th",
     "category": "research",
     "field": "วิศวกรรมเครื่องกล",
-    "id": "dfdf3cdc"
+    "id": "dfdf3cdc",
+    "verified_url": true
   },
   {
     "title": "ทุนสนับสนุนงานวิจัยด้านเทคโนโลยีชีวภาพทางการแพทย์",
@@ -16,10 +17,11 @@
     "deadline": "2026-05-15",
     "eligibility": "นักวิจัย/สถาบันวิจัย สาขาการแพทย์",
     "amount": "ไม่เกิน 500,000 บาท",
-    "link": "https://www.nia.or.th/program/biomedical",
+    "link": "https://www.nia.or.th",
     "category": "research",
     "field": "การแพทย์",
-    "id": "c915b0d4"
+    "id": "c915b0d4",
+    "verified_url": true
   },
   {
     "title": "ทุนพัฒนาอุปกรณ์การแพทย์ขั้นสูง",
@@ -27,10 +29,11 @@
     "deadline": "2026-04-30",
     "eligibility": "บุคลากรทางการแพทย์/วิศวกรรม",
     "amount": "ไม่เกิน 2,000,000 บาท",
-    "link": "https://www.nstda.or.th/medical-device",
+    "link": "https://www.nstda.or.th",
     "category": "research",
     "field": "การแพทย์ + วิศวกรรม",
-    "id": "76a38f4b"
+    "id": "76a38f4b",
+    "verified_url": true
   },
   {
     "title": "ทุนสกอ. ระดับบัณฑิตศึกษา สาขาวิศวกรรม",
@@ -38,10 +41,11 @@
     "deadline": "2026-03-31",
     "eligibility": "นักศึกษาปริญญาโท-เอก สาขาวิศวกรรม",
     "amount": "15,000 - 25,000 บาท/เดือน",
-    "link": "https://www.mhesi.go.th/scholarship/graduate",
+    "link": "https://www.mhesi.go.th",
     "category": "education",
     "field": "วิศวกรรม",
-    "id": "0b30296d"
+    "id": "0b30296d",
+    "verified_url": true
   },
   {
     "title": "ทุนวิจัยขั้นแม่นยำด้านวิศวกรรมชีวกำลัง (Biomechanics)",
@@ -49,10 +53,11 @@
     "deadline": "2026-07-15",
     "eligibility": "นักวิจัยไทย สาขาชีวกลศาสตร์",
     "amount": "ไม่เกิน 1,500,000 บาท",
-    "link": "https://www.nrct.go.th/biomechanics",
+    "link": "https://www.nrct.go.th/young-researcher",
     "category": "research",
     "field": "วิศวกรรมเครื่องกล + การแพทย์",
-    "id": "fda2eec5"
+    "id": "fda2eec5",
+    "verified_url": true
   },
   {
     "title": "ทุนรางวัลนักวิจัยรุ่นใหม่ สาขาแพทยศาสตร์",
@@ -63,7 +68,8 @@
     "link": "https://www.nrct.go.th/young-researcher",
     "category": "research",
     "field": "การแพทย์",
-    "id": "6582eb13"
+    "id": "6582eb13",
+    "verified_url": true
   },
   {
     "title": "ทุนสนับสนุนเทคโนโลยีการผลิตชั้นสูง (Smart Manufacturing)",
@@ -71,10 +77,11 @@
     "deadline": "2026-05-30",
     "eligibility": "อาจารย์/นักวิจัย/ภาคอุตสาหกรรม",
     "amount": "ไม่เกิน 3,000,000 บาท",
-    "link": "https://www.nia.or.th/smart-manufacturing",
+    "link": "https://www.nia.or.th",
     "category": "research",
     "field": "วิศวกรรมเครื่องกล",
-    "id": "4f7479da"
+    "id": "4f7479da",
+    "verified_url": true
   },
   {
     "title": "ทุนโครงการ i4.0 ด้านวิศวกรรมยานยนต์",
@@ -82,10 +89,11 @@
     "deadline": "2026-06-15",
     "eligibility": "มหาวิทยาลัย/สถาบันวิจัย",
     "amount": "ไม่เกิน 5,000,000 บาท",
-    "link": "https://www.nstda.or.th/automotive-i4",
+    "link": "https://www.nstda.or.th",
     "category": "research",
     "field": "วิศวกรรมเครื่องกล",
-    "id": "520bf250"
+    "id": "520bf250",
+    "verified_url": true
   },
   {
     "title": "ทุนพัฒนาหุ่นยนต์ทางการแพทย์ (Medical Robotics)",
@@ -93,10 +101,11 @@
     "deadline": "2026-09-30",
     "eligibility": "ทีมวิจัยข้ามสาขา (แพทย์+วิศวกร)",
     "amount": "ไม่เกิน 2,500,000 บาท",
-    "link": "https://www.nia.or.th/medical-robotics",
+    "link": "https://www.nia.or.th",
     "category": "research",
     "field": "วิศวกรรมเครื่องกล + การแพทย์",
-    "id": "9f86f79f"
+    "id": "9f86f79f",
+    "verified_url": true
   },
   {
     "title": "ทุนอบรมเชิงปฏิบัติการด้านวิศวกรรมชีวภาพ",
@@ -104,10 +113,11 @@
     "deadline": "2026-04-15",
     "eligibility": "อาจารย์/นักศึกษาระดับบัณฑิตศึกษา",
     "amount": "ครอบคลุมค่าใช้จ่าย",
-    "link": "https://www.nstda.or.th/training/biomedical",
+    "link": "https://www.nstda.or.th",
     "category": "training",
     "field": "การแพทย์ + วิศวกรรม",
-    "id": "64f928c7"
+    "id": "64f928c7",
+    "verified_url": true
   },
   {
     "title": "ทุนบริจาคเพื่อการศึกษา ม.จุฬาฯ",
@@ -115,10 +125,11 @@
     "deadline": "2026-05-30",
     "eligibility": "นักศึกษาวิศวกรรมศาสตร์ ชั้นปี 3-4",
     "amount": "50,000 - 100,000 บาท/ปี",
-    "link": "https://www.chula.ac.th/admission/scholarship",
+    "link": "https://www.chula.ac.th",
     "category": "education",
     "field": "วิศวกรรม",
-    "id": "1c4a9f76"
+    "id": "1c4a9f76",
+    "verified_url": true
   },
   {
     "title": "ทุน บริษัท โตโยต้า ประเทศไทย",
@@ -126,10 +137,11 @@
     "deadline": "2026-04-30",
     "eligibility": "นักศึกษาวิศวกรรมเครื่องกล/ยานยนต์",
     "amount": "80,000 บาท/ปี",
-    "link": "https://www.toyota.co.th/th/scholarship",
+    "link": "https://www.toyota.co.th",
     "category": "education",
     "field": "วิศวกรรมเครื่องกล",
-    "id": "ce8b49d5"
+    "id": "ce8b49d5",
+    "verified_url": true
   },
   {
     "title": "ทุนวิจัยการแพทย์แม่นยำ (Precision Medicine)",
@@ -137,10 +149,11 @@
     "deadline": "2026-06-30",
     "eligibility": "นักวิจัยด้านการแพทย์/ชีววิทยา",
     "amount": "ไม่เกิน 2,000,000 บาท",
-    "link": "https://www.nrct.go.th/precision-medicine",
+    "link": "https://www.nrct.go.th",
     "category": "research",
     "field": "การแพทย์",
-    "id": "788207d9"
+    "id": "788207d9",
+    "verified_url": true
   },
   {
     "title": "ทุนสถาบันการแพทย์จุฬาฯ",
@@ -148,10 +161,11 @@
     "deadline": "2026-05-15",
     "eligibility": "แพทย์/นักวิจัยด้านการแพทย์",
     "amount": "100,000 - 500,000 บาท",
-    "link": "https://www.md.chula.ac.th/scholarship",
+    "link": "https://www.md.chula.ac.th",
     "category": "research",
     "field": "การแพทย์",
-    "id": "150a4dcf"
+    "id": "150a4dcf",
+    "verified_url": true
   },
   {
     "title": "ทุนวิจัยด้านปัญญาประดิษฐ์ทางการแพทย์ (AI in Medicine)",
@@ -159,10 +173,11 @@
     "deadline": "2026-07-31",
     "eligibility": "ทีมวิจัยด้าน AI/การแพทย์",
     "amount": "ไม่เกิน 3,000,000 บาท",
-    "link": "https://www.nia.or.th/ai-medicine",
+    "link": "https://www.nia.or.th",
     "category": "research",
     "field": "การแพทย์ + วิศวกรรม",
-    "id": "7ab84d8a"
+    "id": "7ab84d8a",
+    "verified_url": true
   },
   {
     "title": "ทุนรศ. การแพทย์ฉุกเฉิน",
@@ -170,10 +185,11 @@
     "deadline": "2026-06-01",
     "eligibility": "แพทย์/พยาบาล/นักวิจัย",
     "amount": "50,000 - 200,000 บาท",
-    "link": "https://www.emthai.org/scholarship",
+    "link": "https://www.emthai.org",
     "category": "research",
     "field": "การแพทย์",
-    "id": "e6547f75"
+    "id": "e6547f75",
+    "verified_url": true
   },
   {
     "title": "ทุน กองทุนวิจัย ม.เกษตรศาสตร์",
@@ -181,10 +197,11 @@
     "deadline": "2026-05-20",
     "eligibility": "นักศึกษา/อาจารย์ สาขาวิศวกรรม",
     "amount": "30,000 - 150,000 บาท",
-    "link": "https://www.ku.ac.th/scholarship/research",
+    "link": "https://www.ku.ac.th",
     "category": "research",
     "field": "วิศวกรรม",
-    "id": "5348ff59"
+    "id": "5348ff59",
+    "verified_url": true
   },
   {
     "title": "ทุนโครงการ EEC ด้านอุตสาหกรรมเป้าหมาย",
@@ -192,10 +209,11 @@
     "deadline": "2026-06-30",
     "eligibility": "นักศึกษาวิศวกรรม/วิทยาศาสตร์",
     "amount": "60,000 - 120,000 บาท/ปี",
-    "link": "https://www.eeco.or.th/scholarship",
+    "link": "https://www.eeco.or.th",
     "category": "education",
     "field": "วิศวกรรม",
-    "id": "a35b5852"
+    "id": "a35b5852",
+    "verified_url": true
   },
   {
     "title": "ทุนสถาบันวิจัยดาราศาสตร์แห่งชาติ (NARIT)",
@@ -203,10 +221,11 @@
     "deadline": "2026-04-30",
     "eligibility": "นักศึกษาฟิสิกส์/วิศวกรรม",
     "amount": "40,000 - 100,000 บาท",
-    "link": "https://www.narit.or.th/scholarship",
+    "link": "https://www.narit.or.th",
     "category": "education",
     "field": "วิศวกรรม + การแพทย์",
-    "id": "84c9017b"
+    "id": "84c9017b",
+    "verified_url": true
   },
   {
     "title": "ทุนวิจัยและพัฒนาด้าน Medical Imaging",
@@ -214,10 +233,11 @@
     "deadline": "2026-05-31",
     "eligibility": "นักวิจัย/นักศึกษาปริญญาโท-เอก",
     "amount": "ไม่เกิน 1,500,000 บาท",
-    "link": "https://www.nstda.or.th/medical-imaging",
+    "link": "https://www.nstda.or.th",
     "category": "research",
     "field": "การแพทย์ + วิศวกรรม",
-    "id": "ac79107f"
+    "id": "ac79107f",
+    "verified_url": true
   },
   {
     "title": "ทุนโครงการ วมว. สวทช.",
@@ -225,21 +245,23 @@
     "deadline": "2026-03-31",
     "eligibility": "นักศึกษาปริญญาโท-เอก สาขาวิทยาศาสตร์/วิศวกรรม",
     "amount": "15,000 - 25,000 บาท/เดือน",
-    "link": "https://www.nstda.or.th/vonw",
+    "link": "https://www.nstda.or.th",
     "category": "education",
     "field": "วิศวกรรม",
-    "id": "010b4d7b"
+    "id": "010b4d7b",
+    "verified_url": true
   },
   {
     "title": "ทุนสนับสนุน startup ด้าน Health Tech",
     "provider": "สำนักงานนวัตกรรมแห่งชาติ (NIA)",
     "deadline": "2026-08-31",
     "eligibility": "ผู้ประกอบการ startup สาขาเทคโนโลยีสุขภาพ",
-    "amount": "ไม่เกิน 1,000,000 บาท",
-    "link": "https://www.nia.or.th/health-tech",
+    "amount": "ไม่เกิน 1,000,000 �บาท",
+    "link": "https://www.nia.or.th",
     "category": "research",
     "field": "การแพทย์ + วิศวกรรม",
-    "id": "db25c9cd"
+    "id": "db25c9cd",
+    "verified_url": true
   },
   {
     "title": "ทุนการศึกษา กองทุนพัฒนาบุคลากร",
@@ -247,10 +269,11 @@
     "deadline": "2026-04-30",
     "eligibility": "บุคลากรทางการแพทย์/สาธารณสุข",
     "amount": "50,000 - 200,000 บาท",
-    "link": "https://www.moph.go.th/scholarship",
+    "link": "https://www.moph.go.th",
     "category": "education",
     "field": "การแพทย์",
-    "id": "c6dd3460"
+    "id": "c6dd3460",
+    "verified_url": true
   },
   {
     "title": "ทุนวิจัยด้าน Bio-robotics",
@@ -258,10 +281,11 @@
     "deadline": "2026-07-31",
     "eligibility": "นักวิจัยข้ามสาขา",
     "amount": "ไม่เกิน 2,000,000 บาท",
-    "link": "https://www.nrct.go.th/biorobotics",
+    "link": "https://www.nrct.go.th",
     "category": "research",
     "field": "วิศวกรรมเครื่องกล + การแพทย์",
-    "id": "c83f1629"
+    "id": "c83f1629",
+    "verified_url": true
   },
   {
     "title": "ทุนพัฒนาวิศวกรรมเมคคาทรอนิกส์",
@@ -269,9 +293,10 @@
     "deadline": "2026-05-31",
     "eligibility": "นักศึกษา/อาจารย์ สาขาวิศวกรรม",
     "amount": "ไม่เกิน 500,000 บาท",
-    "link": "https://www.nia.or.th/mechatronics",
+    "link": "https://www.nia.or.th",
     "category": "research",
     "field": "วิศวกรรมเครื่องกล",
-    "id": "c38308f5"
+    "id": "c38308f5",
+    "verified_url": true
   }
 ]
