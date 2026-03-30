@@ -1,0 +1,112 @@
+[
+  {
+    "title": "ทุนวิจัยเพื่อนวัตกรรมด้านวิศวกรรมเครื่องกล",
+    "provider": "สำนักงานการวิจัยแห่งชาติ (NRCT)",
+    "deadline": "2026-06-30",
+    "eligibility": "นักวิจัยไทย สาขาวิศวกรรมเครื่องกล",
+    "amount": "ไม่เกิน 1,000,000 บาท",
+    "link": "https://www.nrct.go.th",
+    "category": "research",
+    "field": "วิศวกรรมเครื่องกล"
+  },
+  {
+    "title": "ทุนสนับสนุนงานวิจัยด้านเทคโนโลยีชีวภาพทางการแพทย์",
+    "provider": "สำนักงานนวัตกรรมแห่งชาติ (NIA)",
+    "deadline": "2026-05-15",
+    "eligibility": "นักวิจัย/สถาบันวิจัย สาขาการแพทย์",
+    "amount": "ไม่เกิน 500,000 บาท",
+    "link": "https://www.nia.or.th",
+    "category": "research",
+    "field": "การแพทย์"
+  },
+  {
+    "title": "ทุนพัฒนาอุปกรณ์การแพทย์ขั้นสูง",
+    "provider": "สถาบันนโยบายวิทยาศาสตร์และเทคโนโลยี (NSTDA)",
+    "deadline": "2026-04-30",
+    "eligibility": "บุคลากรทางการแพทย์/วิศวกรรม",
+    "amount": "ไม่เกิน 2,000,000 บาท",
+    "link": "https://www.nstda.or.th",
+    "category": "research",
+    "field": "การแพทย์ + วิศวกรรม"
+  },
+  {
+    "title": "ทุนสกอ. ระดับบัณฑิตศึกษา สาขาวิศวกรรม",
+    "provider": "สำนักงานคณะกรรมการการอุดมศึกษา (สกอ.)",
+    "deadline": "2026-03-31",
+    "eligibility": "นักศึกษาปริญญาโท-เอก สาขาวิศวกรรม",
+    "amount": "15,000 - 25,000 บาท/เดือน",
+    "link": "https://www.mhesi.go.th",
+    "category": "education",
+    "field": "วิศวกรรม"
+  },
+  {
+    "title": "ทุนวิจัยขั้นแม่นยำด้านวิศวกรรมชีวกำลัง (Biomechanics)",
+    "provider": "NRCT",
+    "deadline": "2026-07-15",
+    "eligibility": "นักวิจัยไทย สาขาชีวกลศาสตร์",
+    "amount": "ไม่เกิน 1,500,000 บาท",
+    "link": "https://www.nrct.go.th",
+    "category": "research",
+    "field": "วิศวกรรมเครื่องกล + การแพทย์"
+  },
+  {
+    "title": "ทุนรางวัลนักวิจัยรุ่นใหม่ สาขาแพทยศาสตร์",
+    "provider": "สำนักงานการวิจัยแห่งชาติ",
+    "deadline": "2026-08-01",
+    "eligibility": "นักวิจัยอายุไม่เกิน 40 ปี",
+    "amount": "500,000 บาท",
+    "link": "https://www.nrct.go.th",
+    "category": "research",
+    "field": "การแพทย์"
+  },
+  {
+    "title": "ทุนสนับสนุนเทคโนโลยีการผลิตชั้นสูง (Smart Manufacturing)",
+    "provider": "สำนักงานนวัตกรรมแห่งชาติ",
+    "deadline": "2026-05-30",
+    "eligibility": "อาจารย์/นักวิจัย/ภาคอุตสาหกรรม",
+    "amount": "ไม่เกิน 3,000,000 บาท",
+    "link": "https://www.nia.or.th",
+    "category": "research",
+    "field": "วิศวกรรมเครื่องกล"
+  },
+  {
+    "title": "ทุนโครงการ i4.0 ด้านวิศวกรรมยานยนต์",
+    "provider": "สถาบันนโยบายวิทยาศาสตร์",
+    "deadline": "2026-06-15",
+    "eligibility": "มหาวิทยาลัย/สถาบันวิจัย",
+    "amount": "ไม่เกิน 5,000,000 บาท",
+    "link": "https://www.nstda.or.th",
+    "category": "research",
+    "field": "วิศวกรรมเครื่องกล"
+  },
+  {
+    "title": "ทุนพัฒนาหุ่นยนต์ทางการแพทย์ (Medical Robotics)",
+    "provider": "NIA + NRCT",
+    "deadline": "2026-09-30",
+    "eligibility": "ทีมวิจัยข้ามสาขา (แพทย์+วิศวกร)",
+    "amount": "ไม่เกิน 2,500,000 บาท",
+    "link": "https://www.nia.or.th",
+    "category": "research",
+    "field": "วิศวกรรมเครื่องกล + การแพทย์"
+  },
+  {
+    "title": "ทุนอบรมเชิงปฏิบัติการด้านวิศวกรรมชีวภาพ",
+    "provider": "กระทรวงวิทยาศาสตร์",
+    "deadline": "2026-04-15",
+    "eligibility": "อาจารย์/นักศึกษาระดับบัณฑิตศึกษา",
+    "amount": "ครอบคลุมค่าใช้จ่าย",
+    "link": "https://www.nstda.or.th",
+    "category": "training",
+    "field": "การแพทย์ + วิศวกรรม"
+  },
+  {
+    "title": "ข่าวประชาสัมพันธ์30 มีนาคม 256926NIA เปิดมุมมอง “Healthspan” ดันนวัตกรรมสุขภาพไทยสู่เวทีโลก",
+    "provider": "NIA - สำนักงานนวัตกรรมแห่งชาติ",
+    "deadline": "ตรวจสอบจากลิงก์",
+    "eligibility": "ผู้ประกอบการ/นักวิจัย",
+    "amount": "ตามประกาศ",
+    "link": "https://www.nia.or.th/Techsauce-Healthspan-Festival-2026",
+    "category": "research",
+    "field": "นวัตกรรม"
+  }
+]
