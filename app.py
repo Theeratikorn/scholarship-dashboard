@@ -331,7 +331,9 @@ def run_scrape():
 
 # ============ Scheduler ============
 scheduler = BackgroundScheduler()
-scheduler.add_job(run_scrape, 'interval', days=3, id='scheduled_scrape')
+# ถ้าเป็น Railway ให้ใช้ cron job แทน APScheduler
+if os.environ.get('RAILWAY_ENVIRONMENT') is None:
+    scheduler.add_job(run_scrape, 'interval', days=3, id='scheduled_scrape')
 
 # ============ Routes ============
 @app.route('/')
@@ -386,10 +388,11 @@ def scholarship_detail(scholarship_id):
 
 # ============ Start ============
 if __name__ == '__main__':
-    # รัน scrape ครั้งแรกถ้ายังไม่มีข้อมูล
-    if not os.path.exists(DATA_FILE):
-        logger.info('เริ่ม scrape ครั้งแรก...')
-        run_scrape()
+    # รัน scrape ครั้งแรกถ้ายังไม่มีข้อมูล (เฉพาะ LOCAL ไม่ใช่ Railway)
+    if os.environ.get('RAILWAY_ENVIRONMENT') is None:
+        if not os.path.exists(DATA_FILE):
+            logger.info('เริ่ม scrape ครั้งแรก...')
+            run_scrape()
+        scheduler.start()
     
-    scheduler.start()
     app.run(host='0.0.0.0', port=5010, debug=False)
