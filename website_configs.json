@@ -10,7 +10,7 @@
       "type": "government",
       "fields": ["วิศวกรรมเครื่องกล", "หุ่นยนต์", "วิศวกรรมการแพทย์", "การแพทย์", "ชีวกลศาสตร์", "Biomedical Engineering", "Health Tech", "ไฟฟ้า", "AI"],
       "scrape_config": {
-        "method": "selenium",
+        "method": "playwright",
         "title_selector": "h3, .title, .news-title, article h3, .list-group-item",
         "deadline_selector": ".date, .deadline, time",
         "amount_selector": ".amount, .budget",
@@ -115,7 +115,7 @@
       "type": "government",
       "fields": ["วิศวกรรมเครื่องกล", "หุ่นยนต์", "วิศวกรรมการแพทย์", "การแพทย์", "ไฟฟ้า", "AI", "ทุกสาขา"],
       "scrape_config": {
-        "method": "selenium",
+        "method": "playwright",
         "title_selector": "h2, h3, .title, .card-title, .news-title",
         "deadline_selector": ".date, .deadline, time",
         "amount_selector": ".amount, .loan-amount",

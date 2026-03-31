@@ -1,167 +1,154 @@
-[
-  {
-    "title": "ทุนวิจัยเพื่อนวัตกรรมด้านวิศวกรรมเครื่องกล",
-    "provider": "สำนักงานการวิจัยแห่งชาติ (NRCT)",
-    "deadline": "2026-06-30",
-    "eligibility": "นักวิจัยไทย สาขาวิศวกรรมเครื่องกล",
-    "amount": "ไม่เกิน 1,000,000 บาท",
-    "link": "https://www.nrct.go.th",
-    "category": "research",
-    "field": "วิศวกรรมเครื่องกล",
-    "id": "dfdf3cdc"
-  },
-  {
-    "title": "ทุนสนับสนุนงานวิจัยด้านเทคโนโลยีชีวภาพทางการแพทย์",
-    "provider": "สำนักงานนวัตกรรมแห่งชาติ (NIA)",
-    "deadline": "2026-05-15",
-    "eligibility": "นักวิจัย/สถาบันวิจัย สาขาการแพทย์",
-    "amount": "ไม่เกิน 500,000 บาท",
-    "link": "https://www.nia.or.th",
-    "category": "research",
-    "field": "การแพทย์",
-    "id": "c915b0d4"
-  },
-  {
-    "title": "ทุนพัฒนาอุปกรณ์การแพทย์ขั้นสูง",
-    "provider": "สถาบันนโยบายวิทยาศาสตร์และเทคโนโลยี (NSTDA)",
-    "deadline": "2026-04-30",
-    "eligibility": "บุคลากรทางการแพทย์/วิศวกรรม",
-    "amount": "ไม่เกิน 2,000,000 บาท",
-    "link": "https://www.nstda.or.th",
-    "category": "research",
-    "field": "การแพทย์ + วิศวกรรม",
-    "id": "76a38f4b"
-  },
-  {
-    "title": "ทุนสกอ. ระดับบัณฑิตศึกษา สาขาวิศวกรรม",
-    "provider": "สำนักงานคณะกรรมการการอุดมศึกษา (สกอ.)",
-    "deadline": "2026-03-31",
-    "eligibility": "นักศึกษาปริญญาโท-เอก สาขาวิศวกรรม",
-    "amount": "15,000 - 25,000 บาท/เดือน",
-    "link": "https://www.mhesi.go.th",
-    "category": "education",
-    "field": "วิศวกรรม",
-    "id": "0b30296d"
-  },
-  {
-    "title": "ทุนวิจัยขั้นแม่นยำด้านวิศวกรรมชีวกำลัง (Biomechanics)",
-    "provider": "NRCT",
-    "deadline": "2026-07-15",
-    "eligibility": "นักวิจัยไทย สาขาชีวกลศาสตร์",
-    "amount": "ไม่เกิน 1,500,000 บาท",
-    "link": "https://www.nrct.go.th",
-    "category": "research",
-    "field": "วิศวกรรมเครื่องกล + การแพทย์",
-    "id": "fda2eec5"
-  },
-  {
-    "title": "ทุนรางวัลนักวิจัยรุ่นใหม่ สาขาแพทยศาสตร์",
-    "provider": "สำนักงานการวิจัยแห่งชาติ",
-    "deadline": "2026-08-01",
-    "eligibility": "นักวิจัยอายุไม่เกิน 40 ปี",
-    "amount": "500,000 บาท",
-    "link": "https://www.nrct.go.th",
-    "category": "research",
-    "field": "การแพทย์",
-    "id": "6582eb13"
-  },
-  {
-    "title": "ทุนสนับสนุนเทคโนโลยีการผลิตชั้นสูง (Smart Manufacturing)",
-    "provider": "สำนักงานนวัตกรรมแห่งชาติ",
-    "deadline": "2026-05-30",
-    "eligibility": "อาจารย์/นักวิจัย/ภาคอุตสาหกรรม",
-    "amount": "ไม่เกิน 3,000,000 บาท",
-    "link": "https://www.nia.or.th",
-    "category": "research",
-    "field": "วิศวกรรมเครื่องกล",
-    "id": "4f7479da"
-  },
-  {
-    "title": "ทุนโครงการ i4.0 ด้านวิศวกรรมยานยนต์",
-    "provider": "สถาบันนโยบายวิทยาศาสตร์",
-    "deadline": "2026-06-15",
-    "eligibility": "มหาวิทยาลัย/สถาบันวิจัย",
-    "amount": "ไม่เกิน 5,000,000 บาท",
-    "link": "https://www.nstda.or.th",
-    "category": "research",
-    "field": "วิศวกรรมเครื่องกล",
-    "id": "520bf250"
-  },
-  {
-    "title": "ทุนพัฒนาหุ่นยนต์ทางการแพทย์ (Medical Robotics)",
-    "provider": "NIA + NRCT",
-    "deadline": "2026-09-30",
-    "eligibility": "ทีมวิจัยข้ามสาขา (แพทย์+วิศวกร)",
-    "amount": "ไม่เกิน 2,500,000 บาท",
-    "link": "https://www.nia.or.th",
-    "category": "research",
-    "field": "วิศวกรรมเครื่องกล + การแพทย์",
-    "id": "9f86f79f"
-  },
-  {
-    "title": "ทุนอบรมเชิงปฏิบัติการด้านวิศวกรรมชีวภาพ",
-    "provider": "กระทรวงวิทยาศาสตร์",
-    "deadline": "2026-04-15",
-    "eligibility": "อาจารย์/นักศึกษาระดับบัณฑิตศึกษา",
-    "amount": "ครอบคลุมค่าใช้จ่าย",
-    "link": "https://www.nstda.or.th",
-    "category": "training",
-    "field": "การแพทย์ + วิศวกรรม",
-    "id": "64f928c7"
-  },
-  {
-    "title": "ข่าวประชาสัมพันธ์30 มีนาคม 256947NIA เปิดมุมมอง “Healthspan” ดันนวัตกรรมสุขภาพไทยสู่เวทีโลก",
-    "provider": "สำนักงานนวัตกรรมแห่งชาติ (NIA)",
-    "deadline": "ตรวจสอบจากลิงก์",
-    "eligibility": "ผู้ประกอบการ/นักวิจัย",
-    "amount": "ตามประกาศ",
-    "link": "https://www.nia.or.th/Techsauce-Healthspan-Festival-2026",
-    "category": "research",
-    "field": "นวัตกรรม",
-    "id": "31a8b99c"
-  },
-  {
-    "title": "NSTDA and Thailand’s Department of Disease Control Sign MoU to Strengthen Smart Disease Surveillance and “Smart Community Health”",
-    "provider": "สถาบันนโยบายวิทยาศาสตร์และเทคโนโลยีแห่งชาติ (NSTDA)",
-    "deadline": "ตรวจสอบจากลิงก์",
-    "eligibility": "นักวิจัย/ภาคเอกชน",
-    "amount": "ตามประกาศ",
-    "link": "https://www.nstda.or.th/en/news/news-years-2026/smart-community-health.html",
-    "category": "research",
-    "field": "วิทยาศาสตร์/เทคโนโลยี",
-    "id": "9a8ff54b"
-  },
-  {
-    "title": "NSTDA, with MHESI Agencies, Showcases Thai Health Innovations at WHX Dubai 2026",
-    "provider": "สถาบันนโยบายวิทยาศาสตร์และเทคโนโลยีแห่งชาติ (NSTDA)",
-    "deadline": "ตรวจสอบจากลิงก์",
-    "eligibility": "นักวิจัย/ภาคเอกชน",
-    "amount": "ตามประกาศ",
-    "link": "https://www.nstda.or.th/en/news/news-years-2026/whx-dubai-2026.html",
-    "category": "research",
-    "field": "วิทยาศาสตร์/เทคโนโลยี",
-    "id": "41bb8d76"
-  },
-  {
-    "title": "You are invited to join “Thailand-Denmark Mini-Symposium on “Advancing Thailand-Denmark Collaboaration in Bioscience, Future Food, Medicine, and Environment for Sustainability”",
-    "provider": "สถาบันนโยบายวิทยาศาสตร์และเทคโนโลยีแห่งชาติ (NSTDA)",
-    "deadline": "ตรวจสอบจากลิงก์",
-    "eligibility": "นักวิจัย/ภาคเอกชน",
-    "amount": "ตามประกาศ",
-    "link": "https://www.nstda.or.th/en/news-media/announcements/announcements-news-all/you-are-invited-to-join-“thailand-denmark-mini-symposium-on-“advancing-thailand-denmark-collaboaration-in-bioscience,-future-food,-medicine,-and-environment-for-sustainability”.html",
-    "category": "research",
-    "field": "วิทยาศาสตร์/เทคโนโลยี",
-    "id": "8408a0d1"
-  },
-  {
-    "title": "Online Panel Discussion on Leveraging Technology for Better Outcomes in Maternal & Child Health",
-    "provider": "สถาบันนโยบายวิทยาศาสตร์และเทคโนโลยีแห่งชาติ (NSTDA)",
-    "deadline": "ตรวจสอบจากลิงก์",
-    "eligibility": "นักวิจัย/ภาคเอกชน",
-    "amount": "ตามประกาศ",
-    "link": "https://www.nstda.or.th/en/news-media/news-from-partners/online-panel-discussion-on-leveraging-technology-for-better-outcomes-in-maternal-child-health.html",
-    "category": "research",
-    "field": "วิทยาศาสตร์/เทคโนโลยี",
-    "id": "4b86020d"
-  }
-]
+{
+  "version": "1.0",
+  "updated_at": "2026-03-31T12:43:03.408659",
+  "total": 13,
+  "scholarships": [
+    {
+      "title": "NIA ยกทัพผู้ประกอบการไทย บุกตลาดอาเซียนในงาน “Thai Festival in Hanoi 2026” ณ ป้อมปราการหลวงทังลอง กรุงฮานอย สาธารณรัฐสังคมนิยมเวียดนาม",
+      "url": "",
+      "deadline": "",
+      "amount": "",
+      "eligibility": "36",
+      "source": "",
+      "source_type": "",
+      "fields": [],
+      "id": "cfa82bdacb374896"
+    },
+    {
+      "title": "NIA เปิดมุมมอง “Healthspan” ดันนวัตกรรมสุขภาพไทยสู่เวทีโลก",
+      "url": "",
+      "deadline": "",
+      "amount": "",
+      "eligibility": "48",
+      "source": "",
+      "source_type": "",
+      "fields": [],
+      "id": "0838f15d7ea9bff7"
+    },
+    {
+      "title": "Test",
+      "source": "Test",
+      "url": "http://test.com"
+    },
+    {
+      "title": "ทุน กยศ. ระดับอุดมศึกษา",
+      "source": "กองทุนเงินให้กู้ยืมเพื่อการศึกษา",
+      "url": "https://www.studentloan.or.th",
+      "type": "เงินกู้ยืมการศึกษา",
+      "level": "มหาวิทยาลัย",
+      "field": "ทุกสาขา",
+      "budget": "ไม่จำกัด",
+      "deadline": "2026-04-30",
+      "description": "ทุนเงินกู้ยืมเพื่อการศึกษาระดับอุดมศึกษา สำหรับนักเรียน/นักศึกษาที่มีความจำเป็นทางการเงิน",
+      "eligibility": "นักศึกษาที่มีรายได้ต่ำกว่าเกณฑ์"
+    },
+    {
+      "title": "ทุนรัฐบาลไทย ระดับปริญญาตรี",
+      "source": "สำนักงานปลัดกระทรวงการอุดมศึกษา",
+      "url": "https://www.mhesi.go.th",
+      "type": "ทุนการศึกษา",
+      "level": "มหาวิทยาลัย",
+      "field": "ทุกสาขา",
+      "budget": "รายเดือน + ค่าครองชีพ",
+      "deadline": "2026-05-31",
+      "description": "ทุนรัฐบาลสำหรับนักศึกษาที่มีผลการเรียนดีและมีความจำเป็นทางการเงิน",
+      "eligibility": "นักศึกษาปริญญาตรี ปี 1-4"
+    },
+    {
+      "title": "ทุน กสพท. คณะแพทยศาสตร์",
+      "source": "สถาบันพระบรมราชชนก",
+      "url": "https://www.pi.ac.th",
+      "type": "ทุนการศึกษา",
+      "level": "มหาวิทยาลัย",
+      "field": "แพทยศาสตร์",
+      "budget": "รายเดือน",
+      "deadline": "2026-04-15",
+      "description": "ทุนสำหรับนักศึกษาแพทย์ที่มีผลการเรียนดี",
+      "eligibility": "นักศึกษาแพทย์ชั้นปีที่ 1-6"
+    },
+    {
+      "title": "ทุนวิจัย สำนักงานการวิจัยแห่งชาติ (NRCT)",
+      "source": "สำนักงานการวิจัยแห่งชาติ",
+      "url": "https://www.nrct.go.th",
+      "type": "ทุนวิจัย",
+      "level": "อาจารย์/นักวิจัย",
+      "field": "ทุกสาขา",
+      "budget": "500,000 - 5,000,000 บาท",
+      "deadline": "2026-04-30",
+      "description": "ทุนสนับสนุนการวิจัยสำหรับนักวิจัยไทย ทุกสาขาวิชา",
+      "eligibility": "นักวิจัยไทยที่มีผลงานวิจัย"
+    },
+    {
+      "title": "ทุนนวัตกรรม สำนักงานนวัตกรรมแห่งชาติ (NIA)",
+      "source": "สำนักงานนวัตกรรมแห่งชาติ",
+      "url": "https://www.nia.or.th",
+      "type": "ทุนนวัตกรรม",
+      "level": "ทุกระดับ",
+      "field": "วิทยาศาสตร์/เทคโนโลยี",
+      "budget": "500,000 - 10,000,000 บาท",
+      "deadline": "2026-05-15",
+      "description": "ทุนสนับสนุนโครงการนวัตกรรมและเทคโนโลยี",
+      "eligibility": "ผู้ประกอบการ/นักวิจัย/นักศึกษา"
+    },
+    {
+      "title": "ทุนพัฒนาบุคลากร กระทรวงวิทยาศาสตร์",
+      "source": "กระทรวงวิทยาศาสตร์",
+      "url": "https://www.most.go.th",
+      "type": "ทุนการศึกษา/ฝึกอบรม",
+      "level": "อาจารย์/นักวิจัย",
+      "field": "วิทยาศาสตร์/เทคโนโลยี",
+      "budget": "ตามสัญญา",
+      "deadline": "2026-06-30",
+      "description": "ทุนพัฒนาบุคลากรด้านวิทยาศาสตร์และเทคโนโลยี",
+      "eligibility": "ข้าราชการ/พนักงานรัฐวิสาหกิจ"
+    },
+    {
+      "title": "ทุน S&T Postgraduate Scholarship",
+      "source": "สำนักงานพัฒนาวิทยาศาสตร์และเทคโนโลยีแห่งชาติ (NSTDA)",
+      "url": "https://www.nstda.or.th",
+      "type": "ทุนวิจัย/ศึกษาต่อ",
+      "level": "ปริญญาโท/เอก",
+      "field": "วิทยาศาสตร์/เทคโนโลยี/การแพทย์",
+      "budget": "รายเดือน + ค่าธรรมเนียม",
+      "deadline": "2026-04-30",
+      "description": "ทุนศึกษาต่อระดับปริญญาโท-เอก ในสาขา STEM",
+      "eligibility": "นักศึกษาที่ต้องการศึกษาต่อด้าน STEM"
+    },
+    {
+      "title": "ทุน Chevening Scholarship Thailand",
+      "source": "สถาบันบริติช",
+      "url": "https://www.chevening.org/thailand",
+      "type": "ทุนศึกษาต่อต่างประเทศ",
+      "level": "ปริญญาโท",
+      "field": "ทุกสาขา",
+      "budget": "ครอบคลุมค่าเล่าเรียน+ค่าครองชีพ+เดินทาง",
+      "deadline": "2026-11-03",
+      "description": "ทุนศึกษาต่อปริญญาโทในสหราชอาณาจักร",
+      "eligibility": "ผู้นำรุ่นใหม่ที่มีประสบการณ์ 2+ ปี"
+    },
+    {
+      "title": "ทุน Fulbright Thailand",
+      "source": "มูลนิธิการศึกษาไทย-อเมริกัน",
+      "url": "https://www.fulbrightthai.org",
+      "type": "ทุนศึกษาต่อต่างประเทศ",
+      "level": "ปริญญาโท/เอก",
+      "field": "ทุกสาขา",
+      "budget": "ครอบคลุมค่าเล่าเรียน+ค่าครองชีพ",
+      "deadline": "2026-05-01",
+      "description": "ทุนศึกษาต่อในสหรัฐอเมริกา",
+      "eligibility": "นักศึกษา/อาจารย์/นักวิจัยไทย"
+    },
+    {
+      "title": "ทุน MECS สำหรับวิศวกรรมเครื่องกล",
+      "source": "สมาคมวิศวกรรมเครื่องกล",
+      "url": "https://www.me.or.th",
+      "type": "ทุนการศึกษา/วิจัย",
+      "level": "ปริญญาโท/เอก",
+      "field": "วิศวกรรมเครื่องกล",
+      "budget": "50,000 - 500,000 บาท",
+      "deadline": "2026-04-20",
+      "description": "ทุนสำหรับนักศึกษาและนักวิจัยด้านวิศวกรรมเครื่องกล",
+      "eligibility": "สมาชิกสมาคมวิศวกรรมเครื่องกรรม"
+    }
+  ]
+}

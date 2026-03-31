@@ -361,10 +361,109 @@ class SeleniumScraper:
 
 
 # ─── Scraper Factory ───────────────────────────────────────────────────────────
+# ─── Playwright Scraper ─────────────────────────────────────────────────────────
+class PlaywrightScraper:
+    name = "playwright"
+
+    def __init__(self):
+        self.browser = None
+        self.playwright = None
+
+    def _get_browser(self):
+        if self.browser is not None:
+            return self.browser
+        try:
+            from playwright.sync_api import sync_playwright
+            
+            self.playwright = sync_playwright().start()
+            self.browser = self.playwright.chromium.launch(
+                headless=True,
+                args=['--no-sandbox', '--disable-dev-shm-usage']
+            )
+            logger.info("Playwright browser started successfully.")
+        except Exception as e:
+            logger.error(f"Failed to start Playwright: {e}")
+            raise
+        return self.browser
+
+    def fetch(self, url: str) -> BeautifulSoup:
+        browser = self._get_browser()
+        for attempt in range(MAX_RETRIES):
+            try:
+                page = browser.new_page()
+                page.goto(url, timeout=REQUEST_TIMEOUT * 1000)
+                page.wait_for_timeout(2000)  # wait for JS to render
+                content = page.content()
+                page.close()
+                return BeautifulSoup(content, "lxml")
+            except Exception as e:
+                logger.warning(f"  Playwright attempt {attempt+1}/{MAX_RETRIES} failed: {e}")
+                if attempt < MAX_RETRIES - 1:
+                    time.sleep(RETRY_DELAY)
+                else:
+                    raise
+
+    def scrape_page(self, url: str, config: dict) -> list[dict]:
+        soup = self.fetch(url)
+        scraper = BeautifulSoupScraper(make_session())
+        return scraper.scrape_page(url, config)
+
+    def paginate(self, url: str, config: dict) -> list[dict]:
+        pag_cfg = config.get("pagination", {})
+        if not pag_cfg.get("enabled", False):
+            return self.scrape_page(url, config)
+
+        max_pages = pag_cfg.get("max_pages", 5)
+        all_items = []
+
+        browser = self._get_browser()
+        for page_num in range(1, max_pages + 1):
+            logger.info(f"  Page {page_num}: {url}")
+            try:
+                page = browser.new_page()
+                page.goto(url, timeout=REQUEST_TIMEOUT * 1000)
+                page.wait_for_timeout(2000)
+                
+                items = self.scrape_page(url, config)
+                if not items:
+                    logger.info(f"  No items found on page {page_num}, stopping.")
+                    page.close()
+                    break
+                all_items.extend(items)
+
+                # Try to click next button
+                next_sel = pag_cfg.get("next_button_selector", "a.next")
+                try:
+                    next_btn = page.query_selector(next_sel)
+                    if next_btn:
+                        url = next_btn.get_attribute("href")
+                        if not url:
+                            break
+                        page.close()
+                        continue
+                    else:
+                        page.close()
+                        break
+                except Exception:
+                    page.close()
+                    break
+            except Exception as e:
+                logger.warning(f"  Page {page_num} error: {e}")
+                break
+
+        return all_items
+
+    def close(self):
+        if self.browser:
+            self.browser.close()
+        if self.playwright:
+            self.playwright.stop()
+
+
 def get_scraper(method: str):
     method = method.lower().strip()
-    if method == "selenium":
-        return SeleniumScraper()
+    if method == "selenium" or method == "playwright":
+        return PlaywrightScraper()
     elif method == "beautifulsoup":
         return BeautifulSoupScraper(make_session())
     else:
@@ -434,9 +533,9 @@ def main():
     logger.info(f"Loaded {len(existing)} existing scholarship entries.")
 
     all_items = list(existing)
-    seen_ids = {item["id"] for item in existing}
+    seen_ids = {item.get("id", item.get("title", ""))[:30] for item in existing}
 
-    selenium_scraper = None
+    playwright_scraper = None
 
     for idx, source in enumerate(sources, 1):
         name = source.get("name", f"Source-{idx}")
@@ -448,11 +547,11 @@ def main():
         logger.info(f"  URL: {url}")
 
         try:
-            # Use singleton selenium scraper to reuse browser session
-            if method == "selenium":
-                if selenium_scraper is None:
-                    selenium_scraper = SeleniumScraper()
-                scraper = selenium_scraper
+            # Use singleton playwright scraper to reuse browser session
+            if method == "selenium" or method == "playwright":
+                if playwright_scraper is None:
+                    playwright_scraper = PlaywrightScraper()
+                scraper = playwright_scraper
             else:
                 scraper = get_scraper("beautifulsoup")
 
@@ -478,9 +577,9 @@ def main():
 
         time.sleep(1)  # be polite between sources
 
-    # Close selenium if used
-    if selenium_scraper:
-        selenium_scraper.close()
+    # Close playwright if used
+    if playwright_scraper:
+        playwright_scraper.close()
 
     # Sort by source + title
     all_items.sort(key=lambda x: (x.get("source", ""), x.get("title", "")))
