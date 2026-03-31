@@ -336,6 +336,11 @@ if os.environ.get('RAILWAY_ENVIRONMENT') is None:
     scheduler.add_job(run_scrape, 'interval', days=3, id='scheduled_scrape')
 
 # ============ Routes ============
+@app.route('/health')
+def health():
+    """Health check endpoint - Railway needs this"""
+    return 'OK', 200
+
 @app.route('/')
 def index():
     scholarships = load_scholarships()
