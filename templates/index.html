@@ -395,9 +395,9 @@
         {% for s in scholarships %}
         <div class="col-12 col-md-6 col-lg-4 scholarship-card"
              data-title="{{ s.title.lower() }}"
-             data-provider="{{ s.provider.lower() }}"
+             data-provider="{{ s.get("provider", s.get("source", "")).lower() }}"
              data-category="{{ s.category|lower }}"
-             data-field="{{ s.field.lower() }}"
+             data-field="{{ s.get("field", s.get("fields", "")).lower() }}"
              data-level="{{ s.eligibility|lower }}"
              data-deadline="{{ s.deadline }}">
             <div class="card h-100">
@@ -439,11 +439,11 @@
 
                     <!-- Field badge -->
                     <div class="mb-2">
-                        {% if 'การแพทย์' in s.field and 'วิศวกรรม' in s.field %}
+                        {% if 'การแพทย์' in s.get('field', s.get('fields', '')) and 'วิศวกรรม' in s.get('field', s.get('fields', '')) %}
                         <span class="badge badge-field field-mech">⚙️ วิศวกรรมเครื่องกล + การแพทย์</span>
-                        {% elif 'การแพทย์' in s.field %}
+                        {% elif 'การแพทย์' in s.get('field', s.get('fields', '')) %}
                         <span class="badge badge-field field-med">🏥 การแพทย์</span>
-                        {% elif 'วิศวกรรม' in s.field %}
+                        {% elif 'วิศวกรรม' in s.get('field', s.get('fields', '')) %}
                         <span class="badge badge-field field-mech">⚙️ วิศวกรรมเครื่องกล</span>
                         {% else %}
                         <span class="badge badge-field field-general">{{ s.field }}</span>
@@ -456,7 +456,7 @@
                     <!-- Provider -->
                     <div class="mb-1">
                         <i class="bi bi-building text-secondary me-1" style="font-size:0.8rem;"></i>
-                        <span class="card-provider">{{ s.provider }}</span>
+                        <span class="card-provider">{{ s.get("provider", s.get("source", "")) }}</span>
                     </div>
 
                     <!-- Amount -->
