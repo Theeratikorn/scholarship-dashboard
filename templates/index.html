@@ -18,89 +18,242 @@
             --card-bg: #1e293b;
             --text: #e2e8f0;
             --text-muted: #94a3b8;
+            --border: #334155;
+            --open: #22c55e;
+            --urgent: #ef4444;
+            --closed: #64748b;
         }
         body {
             background-color: var(--bg);
             color: var(--text);
             font-family: 'Segoe UI', system-ui, sans-serif;
         }
-        .navbar { background: var(--card-bg) !important; border-bottom: 1px solid #334155; }
+        .navbar { background: var(--card-bg) !important; border-bottom: 1px solid var(--border); }
         .navbar-brand { font-weight: 700; color: #fff !important; }
+
+        /* Hero */
         .hero {
             background: linear-gradient(135deg, #1e3a5f 0%, #1a1a2e 100%);
-            padding: 3rem 0;
+            padding: 2.5rem 0;
             margin-bottom: 2rem;
         }
-        .badge-mech { background-color: var(--mech); }
-        .badge-med { background-color: var(--med); }
-        .badge-research { background-color: var(--primary); }
-        .badge-education { background-color: var(--secondary); }
-        .badge-training { background-color: var(--accent); }
+
+        /* Stat Cards */
+        .stat-card {
+            background: linear-gradient(135deg, #1e3a5f, #1a1a2e);
+            border-radius: 12px;
+            padding: 1.25rem 1rem;
+            text-align: center;
+            border: 1px solid var(--border);
+        }
+        .stat-number { font-size: 1.8rem; font-weight: 700; color: #fff; }
+        .stat-label { color: var(--text-muted); font-size: 0.8rem; }
+        .last-update { color: var(--text-muted); font-size: 0.75rem; }
+
+        /* Filter Section */
+        .filter-section {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border);
+        }
+        .filter-section .form-control,
+        .filter-section .form-select {
+            background-color: #334155;
+            border: 1px solid #475569;
+            color: #fff;
+            font-size: 0.875rem;
+        }
+        .filter-section .form-control:focus,
+        .filter-section .form-select:focus {
+            background-color: #334155;
+            border-color: var(--primary);
+            color: #fff;
+            box-shadow: none;
+        }
+        .filter-section .form-control::placeholder { color: #94a3b8; }
+        .filter-section label { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.25rem; }
+
+        /* Scholarship Cards */
         .card {
             background-color: var(--card-bg);
-            border: 1px solid #334155;
+            border: 1px solid var(--border);
             border-radius: 12px;
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
         }
         .card:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+            border-color: var(--primary);
         }
-        .card-title { color: #fff; font-size: 1.1rem; font-weight: 600; }
-        .card-text { color: var(--text-muted); font-size: 0.9rem; }
+
+        /* Deadline badge colors */
+        .deadline-open {
+            color: var(--open);
+            font-weight: 600;
+        }
+        .deadline-urgent {
+            color: var(--urgent);
+            font-weight: 600;
+        }
+        .deadline-closed {
+            color: var(--closed);
+        }
+        .deadline-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.78rem;
+            font-weight: 600;
+        }
+        .deadline-badge.open { background: rgba(34,197,94,0.15); color: var(--open); }
+        .deadline-badge.urgent { background: rgba(239,68,68,0.15); color: var(--urgent); }
+        .deadline-badge.closed { background: rgba(100,116,139,0.15); color: var(--closed); }
+
+        /* Type / Level badges */
+        .badge-type {
+            font-size: 0.72rem;
+            padding: 0.25rem 0.6rem;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+        .badge-level {
+            font-size: 0.68rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+        }
+        .badge-level.faculty { background: #7c3aed; color: #fff; }
+        .badge-level.researcher { background: #0891b2; color: #fff; }
+        .badge-level.student { background: #059669; color: #fff; }
+        .badge-level.all { background: #475569; color: #fff; }
+
+        /* Category badges */
+        .cat-research { background: var(--primary); color: #fff; }
+        .cat-conference { background: #7c3aed; color: #fff; }
+        .cat-equipment { background: #0891b2; color: #fff; }
+        .cat-publication { background: #db2777; color: #fff; }
+        .cat-sabbatical { background: #d97706; color: #fff; }
+        .cat-workshop { background: #059669; color: #fff; }
+        .cat-training { background: var(--accent); color: #fff; }
+        .cat-education { background: var(--secondary); color: #fff; }
+
+        /* Field badges */
+        .badge-field {
+            font-size: 0.68rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+        }
+        .field-mech { background: rgba(8,145,178,0.2); color: #67e8f9; }
+        .field-med { background: rgba(220,38,38,0.2); color: #fca5a5; }
+        .field-general { background: rgba(148,163,184,0.2); color: var(--text-muted); }
+
+        /* Card content */
+        .card-title {
+            color: #fff;
+            font-size: 0.95rem;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+        .card-provider {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+        .card-amount {
+            color: #fbbf24;
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+        .card-body { padding: 1.1rem 1.25rem; }
+
+        /* Buttons */
+        .btn-apply {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border: none;
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.82rem;
+            padding: 0.45rem 1rem;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            transition: opacity 0.2s, transform 0.15s;
+        }
+        .btn-apply:hover { opacity: 0.9; color: #fff; transform: translateY(-1px); text-decoration: none; }
+
+        .btn-save {
+            background: transparent;
+            border: 1px solid #475569;
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            padding: 0.4rem 0.75rem;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            transition: all 0.2s;
+        }
+        .btn-save:hover { border-color: var(--primary); color: var(--primary); background: rgba(37,99,235,0.1); }
+        .btn-save.saved { border-color: var(--secondary); color: var(--secondary); background: rgba(16,185,129,0.1); }
+
         .btn-scrape {
             background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             border: none;
-            padding: 0.6rem 1.5rem;
+            padding: 0.5rem 1.25rem;
             border-radius: 8px;
             font-weight: 600;
+            color: #fff;
         }
         .btn-scrape:hover { opacity: 0.9; color: #fff; }
-        .filter-section {
-            background: var(--card-bg);
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            border: 1px solid #334155;
-        }
-        .form-control, .form-select {
-            background-color: #334155;
-            border: 1px solid #475569;
+
+        /* Scroll-to-top */
+        .scroll-top {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary);
             color: #fff;
+            border: none;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            z-index: 100;
+            transition: display 0.3s;
         }
-        .form-control:focus, .form-select:focus {
-            background-color: #334155;
-            border-color: var(--primary);
-            color: #fff;
+        .scroll-top.show { display: flex; }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero { padding: 1.5rem 0; }
+            .stat-card { padding: 1rem; }
+            .stat-number { font-size: 1.5rem; }
         }
-        .stat-card {
-            background: linear-gradient(135deg, #1e3a5f, #1a1a2e);
-            border-radius: 12px;
-            padding: 1.5rem;
-            text-align: center;
-            border: 1px solid #334155;
-        }
-        .stat-number { font-size: 2rem; font-weight: 700; color: #fff; }
-        .stat-label { color: var(--text-muted); font-size: 0.85rem; }
-        .last-update { color: var(--text-muted); font-size: 0.8rem; }
-        .source-badge {
-            font-size: 0.75rem;
-            padding: 0.3rem 0.7rem;
-            border-radius: 6px;
-        }
-        .field-badge {
-            font-size: 0.7rem;
-            padding: 0.2rem 0.5rem;
-        }
-        .card-body { padding: 1.25rem; }
-        .amount-highlight {
-            color: #fbbf24;
-            font-weight: 600;
-        }
-        .deadline-icon { color: #f97316; }
-        footer { background: var(--card-bg); border-top: 1px solid #334155; padding: 1.5rem 0; margin-top: 3rem; }
+
+        /* Amount label */
+        .amount-label { color: var(--text-muted); font-size: 0.75rem; }
+
+        footer { background: var(--card-bg); border-top: 1px solid var(--border); padding: 1.5rem 0; margin-top: 3rem; }
         #loadingSpinner { display: none; }
-        .spinner-border { color: var(--primary); }
+        .spinner-border-sm { width: 1rem; height: 1rem; border-width: 0.15em; }
+
+        /* Result count bar */
+        .result-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
     </style>
 </head>
 <body>
@@ -117,25 +270,33 @@
 
 <!-- Hero -->
 <div class="hero">
-    <div class="container text-center">
-        <h1 class="mb-2" style="color:#fff; font-weight:700;">
-            <i class="bi bi-search me-2"></i>ค้นหาทุนวิจัย & ทุนการศึกษา
-        </h1>
-        <p class="text-secondary mb-3">รวบรวมทุนจาก NRCT • NIA • NSTDA • สกอ. และแหล่งทุนอื่นๆ ในประเทศไทย</p>
-        <button class="btn btn-scrape text-white" id="scrapeBtn" onclick="runScrape()">
-            <i class="bi bi-arrow-repeat me-1"></i>Scrap ข้อมูลใหม่
-        </button>
-        <div class="spinner-border mt-2" id="loadingSpinner" role="status">
-            <span class="visually-hidden">Loading...</span>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <h1 class="mb-1" style="color:#fff; font-weight:700; font-size:1.5rem;">
+                    <i class="bi bi-search me-2"></i>ค้นหาทุนวิจัย & ทุนการศึกษา
+                </h1>
+                <p class="text-secondary mb-0" style="font-size:0.9rem;">
+                    รวบรวมทุนจาก NRCT • NIA • NSTDA • สกอ. และแหล่งทุนอื่นๆ ในประเทศไทย
+                </p>
+            </div>
+            <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                <button class="btn btn-scrape text-white" id="scrapeBtn" onclick="runScrape()">
+                    <i class="bi bi-arrow-repeat me-1"></i>Scrap ข้อมูลใหม่
+                </button>
+                <div class="spinner-border spinner-border-sm mt-1" id="loadingSpinner" role="status" style="display:none;">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <div id="scrapeResult" class="mt-1" style="font-size:0.78rem;"></div>
+            </div>
         </div>
-        <div id="scrapeResult" class="mt-2 small"></div>
     </div>
 </div>
 
 <!-- Main Content -->
 <div class="container">
-    <!-- Stats -->
-    <div class="row mb-4">
+    <!-- Stats row -->
+    <div class="row mb-3 g-2">
         <div class="col-4">
             <div class="stat-card">
                 <div class="stat-number" id="totalCount">{{ total }}</div>
@@ -144,113 +305,210 @@
         </div>
         <div class="col-4">
             <div class="stat-card">
-                <div class="stat-number">{{ filtered }}</div>
+                <div class="stat-number" id="filteredCount">{{ filtered }}</div>
                 <div class="stat-label">กำลังแสดง</div>
             </div>
         </div>
         <div class="col-4">
             <div class="stat-card">
-                <i class="bi bi-clock-history" style="font-size:1.5rem; color:var(--text-muted)"></i>
+                <i class="bi bi-clock-history" style="font-size:1.3rem; color:var(--text-muted)"></i>
                 <div class="last-update mt-1">อัพเดทล่าสุด</div>
-                <div class="small text-info">{{ last_update }}</div>
+                <div class="small" style="color:#38bdf8;">{{ last_update }}</div>
             </div>
         </div>
     </div>
 
     <!-- Filters -->
     <div class="filter-section">
-        <div class="row g-3">
-            <div class="col-md-4">
-                <label class="form-label small text-secondary">ค้นหา</label>
-                <input type="text" class="form-control" id="searchInput" placeholder="ชื่อทุน, ผู้ให้ทุน..." 
+        <div class="row g-2 align-items-end">
+            <!-- Search -->
+            <div class="col-12 col-md-3">
+                <label><i class="bi bi-search me-1"></i>ค้นหา</label>
+                <input type="text" class="form-control" id="searchInput"
+                       placeholder="ชื่อทุน, ผู้ให้ทุน..."
                        value="{{ request.args.get('search', '') }}">
             </div>
-            <div class="col-md-4">
-                <label class="form-label small text-secondary">ประเภททุน</label>
-                <select class="form-select" id="categoryFilter">
-                    <option value="">ทุกประเภท</option>
-                    {% for cat in categories %}
-                    <option value="{{ cat }}" {% if request.args.get('category') == cat %}selected{% endif %}>
-                        {% if cat == 'research' %}ทุนวิจัย
-                        {% elif cat == 'education' %}ทุนการศึกษา
-                        {% elif cat == 'training' %}ทุนอบรม
-                        {% else %}{{ cat }}{% endif %}
-                    </option>
-                    {% endfor %}
+            <!-- Level filter -->
+            <div class="col-6 col-md-2">
+                <label><i class="bi bi-person-badge me-1"></i>ระดับ</label>
+                <select class="form-select" id="levelFilter">
+                    <option value="">ทุกระดับ</option>
+                    <option value="faculty">อาจารย์</option>
+                    <option value="researcher">นักวิจัย</option>
+                    <option value="student">นักศึกษา</option>
+                    <option value="all">ทุกคน</option>
                 </select>
             </div>
-            <div class="col-md-4">
-                <label class="form-label small text-secondary">สาขา</label>
+            <!-- Type filter -->
+            <div class="col-6 col-md-2">
+                <label><i class="bi bi-tag me-1"></i>ประเภททุน</label>
+                <select class="form-select" id="typeFilter">
+                    <option value="">ทุกประเภท</option>
+                    <option value="research">วิจัย</option>
+                    <option value="conference">Conference</option>
+                    <option value="equipment">Equipment</option>
+                    <option value="publication">Publication</option>
+                    <option value="sabbatical">Sabbatical</option>
+                    <option value="workshop">Workshop</option>
+                    <option value="education">การศึกษา</option>
+                </select>
+            </div>
+            <!-- Field filter -->
+            <div class="col-6 col-md-2">
+                <label><i class="bi bi-diagram-3 me-1"></i>สาขา</label>
                 <select class="form-select" id="fieldFilter">
                     <option value="">ทุกสาขา</option>
                     {% for f in fields %}
-                    <option value="{{ f }}" {% if request.args.get('field') == f %}selected{% endif %}>{{ f }}</option>
+                    <option value="{{ f }}">{{ f }}</option>
                     {% endfor %}
                 </select>
             </div>
+            <!-- Status filter -->
+            <div class="col-6 col-md-3">
+                <label><i class="bi bi-calendar-event me-1"></i>ช่วงเวลา</label>
+                <select class="form-select" id="statusFilter">
+                    <option value="">ทุกช่วง</option>
+                    <option value="open">🟢 กำลังเปิดรับ</option>
+                    <option value="urgent">🔴 ใกล้ปิด (&lt;7 วัน)</option>
+                    <option value="closed">⚫ ปิดแล้ว</option>
+                </select>
+            </div>
         </div>
+        <!-- Active filter tags -->
+        <div id="activeFilters" class="mt-2" style="display:none;">
+            <span class="badge" style="background:#334155; color:#94a3b8; font-size:0.72rem;">
+                <i class="bi bi-funnel me-1"></i>กรองแล้ว
+            </span>
+        </div>
+    </div>
+
+    <!-- Result bar -->
+    <div class="result-bar">
+        <span id="resultText">แสดง <strong id="showingCount">{{ filtered }}</strong> จาก <strong>{{ total }}</strong> รายการ</span>
+        <span class="text-muted" style="font-size:0.75rem;">
+            <i class="bi bi-info-circle me-1"></i>คลิก <strong>บันทึก</strong> เพื่อติดตามทุนที่สนใจ
+        </span>
     </div>
 
     <!-- Cards -->
     <div class="row g-3" id="scholarshipList">
         {% for s in scholarships %}
-        <div class="col-md-6 col-lg-4 scholarship-card"
+        <div class="col-12 col-md-6 col-lg-4 scholarship-card"
              data-title="{{ s.title.lower() }}"
-             data-category="{{ s.category }}"
-             data-field="{{ s.field.lower() }}">
+             data-provider="{{ s.provider.lower() }}"
+             data-category="{{ s.category|lower }}"
+             data-field="{{ s.field.lower() }}"
+             data-level="{{ s.eligibility|lower }}"
+             data-deadline="{{ s.deadline }}">
             <div class="card h-100">
                 <div class="card-body">
-                    <!-- Category & Field badges -->
-                    <div class="d-flex flex-wrap gap-1 mb-2">
-                        <span class="badge badge-{{ s.category }} source-badge">
-                            {% if s.category == 'research' %}🔬 ทุนวิจัย
-                            {% elif s.category == 'education' %}🎓 ทุนศึกษา
-                            {% elif s.category == 'training' %}🛠️ ทุนอบรม
-                            {% else %}{{ s.category }}{% endif %}
-                        </span>
-                        <span class="badge field-badge {% if 'การแพทย์' in s.field %}badge-med{% else %}badge-mech{% endif %}">
-                            {{ s.field }}
+                    <!-- Top row: deadline badge + type badge -->
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <div class="d-flex flex-wrap gap-1">
+                            <!-- Type badge -->
+                            <span class="badge badge-type cat-{{ s.category }}">
+                                {% if s.category == 'research' %}🔬 วิจัย
+                                {% elif s.category == 'conference' %}🎤 Conference
+                                {% elif s.category == 'equipment' %}🔧 Equipment
+                                {% elif s.category == 'publication' %}📄 Publication
+                                {% elif s.category == 'sabbatical' %}🏖️ Sabbatical
+                                {% elif s.category == 'workshop' %}🛠️ Workshop
+                                {% elif s.category == 'training' %}🛠️ อบรม
+                                {% elif s.category == 'education' %}🎓 ศึกษา
+                                {% else %}{{ s.category }}{% endif %}
+                            </span>
+                            <!-- Level badge -->
+                            {% set level = 'all' %}
+                            {% if 'อาจารย์' in s.eligibility %} {% set level = 'faculty' %}
+                            {% elif 'นักวิจัย' in s.eligibility %} {% set level = 'researcher' %}
+                            {% elif 'นักศึกษา' in s.eligibility %} {% set level = 'student' %}
+                            {% endif %}
+                            <span class="badge badge-level {{ level }}">
+                                {% if level == 'faculty' %}👨‍🏫 อาจารย์
+                                {% elif level == 'researcher' %}🔬 นักวิจัย
+                                {% elif level == 'student' %}🎓 นักศึกษา
+                                {% else %}👥 ทุกคน{% endif %}
+                            </span>
+                        </div>
+                        <!-- Deadline badge (computed by JS) -->
+                        <span class="deadline-badge" id="dl-{{ loop.index }}">
+                            <i class="bi bi-calendar-check"></i>
+                            <span class="dl-text">--</span>
                         </span>
                     </div>
-                    
+
+                    <!-- Field badge -->
+                    <div class="mb-2">
+                        {% if 'การแพทย์' in s.field and 'วิศวกรรม' in s.field %}
+                        <span class="badge badge-field field-mech">⚙️ วิศวกรรมเครื่องกล + การแพทย์</span>
+                        {% elif 'การแพทย์' in s.field %}
+                        <span class="badge badge-field field-med">🏥 การแพทย์</span>
+                        {% elif 'วิศวกรรม' in s.field %}
+                        <span class="badge badge-field field-mech">⚙️ วิศวกรรมเครื่องกล</span>
+                        {% else %}
+                        <span class="badge badge-field field-general">{{ s.field }}</span>
+                        {% endif %}
+                    </div>
+
+                    <!-- Title -->
                     <h6 class="card-title mb-2">{{ s.title }}</h6>
-                    
+
+                    <!-- Provider -->
+                    <div class="mb-1">
+                        <i class="bi bi-building text-secondary me-1" style="font-size:0.8rem;"></i>
+                        <span class="card-provider">{{ s.provider }}</span>
+                    </div>
+
+                    <!-- Amount -->
                     <div class="mb-2">
-                        <i class="bi bi-building text-secondary me-1"></i>
-                        <span class="small text-secondary">{{ s.provider }}</span>
+                        <span class="amount-label"><i class="bi bi-cash-stack me-1"></i>วงเงิน</span>
+                        <span class="card-amount">{{ s.amount }}</span>
                     </div>
-                    
-                    <div class="mb-2">
-                        <i class="bi bi-cash-stack amount-highlight me-1"></i>
-                        <span class="small amount-highlight">{{ s.amount }}</span>
+
+                    <!-- Eligibility text -->
+                    <div class="mb-3" style="font-size:0.78rem; color:var(--text-muted);">
+                        <i class="bi bi-person-check me-1"></i>{{ s.eligibility }}
                     </div>
-                    
-                    <div class="mb-2">
-                        <i class="bi bi-calendar-check deadline-icon me-1"></i>
-                        <span class="small text-secondary">{{ s.deadline }}</span>
+
+                    <!-- Action buttons -->
+                    <div class="d-flex gap-2">
+                        <a href="{{ s.link }}" target="_blank" class="btn-apply flex-grow-1 justify-content-center">
+                            <i class="bi bi-box-arrow-up-right"></i>สมัคร
+                        </a>
+                        <button class="btn-save" onclick="toggleSave(this, '{{ s.title|replace("'","\\'") }}')" title="บันทึกทุนนี้">
+                            <i class="bi bi-bookmark"></i>
+                        </button>
                     </div>
-                    
-                    <div class="mb-3">
-                        <i class="bi bi-person-badge text-secondary me-1"></i>
-                        <span class="small text-secondary">{{ s.eligibility }}</span>
-                    </div>
-                    
-                    <a href="{{ s.link }}" target="_blank" class="btn btn-sm btn-primary w-100">
-                        <i class="bi bi-box-arrow-up-right me-1"></i>เปิดหน้าเว็บทุน
-                    </a>
                 </div>
             </div>
         </div>
         {% endfor %}
-        
+
         {% if not scholarships %}
         <div class="col-12 text-center py-5">
-            <i class="bi bi-inbox" style="font-size:3rem; color:var(--text-muted)"></i>
-            <p class="text-secondary mt-2">ไม่พบทุนที่ตรงกับการค้นหา</p>
+            <i class="bi bi-inbox" style="font-size:3.5rem; color:var(--border);"></i>
+            <p class="text-secondary mt-3">ไม่พบทุนที่ตรงกับการค้นหา</p>
+            <button class="btn btn-sm btn-outline-secondary" onclick="clearFilters()">
+                <i class="bi bi-x-circle me-1"></i>ล้างตัวกรอง
+            </button>
         </div>
         {% endif %}
     </div>
+
+    <!-- Empty state when all filtered out -->
+    <div id="noResults" class="col-12 text-center py-5" style="display:none;">
+        <i class="bi bi-search" style="font-size:3rem; color:var(--border);"></i>
+        <p class="text-secondary mt-3">ไม่พบทุนที่ตรงกับตัวกรองที่เลือก</p>
+        <button class="btn btn-sm btn-outline-secondary" onclick="clearFilters()">
+            <i class="bi bi-x-circle me-1"></i>ล้างตัวกรอง
+        </button>
+    </div>
 </div>
+
+<!-- Scroll to top -->
+<button class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <i class="bi bi-chevron-up"></i>
+</button>
 
 <!-- Footer -->
 <footer>
@@ -266,16 +524,193 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
+// ===== Deadline coloring =====
+function parseDate(dateStr) {
+    if (!dateStr || dateStr === 'ตรวจสอบจากลิงก์' || dateStr === '--') return null;
+    // Try YYYY-MM-DD
+    let d = new Date(dateStr);
+    if (!isNaN(d)) return d;
+    // Try DD/MM/YYYY
+    let parts = dateStr.split('/');
+    if (parts.length === 3) {
+        d = new Date(parts[2], parts[1] - 1, parts[0]);
+        if (!isNaN(d)) return d;
+    }
+    return null;
+}
+
+function thaiDate(dateStr) {
+    let d = parseDate(dateStr);
+    if (!d) return dateStr;
+    const months = ['ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.','ส.ค.','ก.ย.','ต.ค.','พ.ย.','ธ.ค.'];
+    return `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear() + 543}`;
+}
+
+function initDeadlineBadges() {
+    const cards = document.querySelectorAll('.scholarship-card');
+    const now = new Date();
+    cards.forEach(card => {
+        const deadlineStr = card.dataset.deadline;
+        const idx = card.closest('.col-12, .col-md-6, .col-lg-4').querySelector('.deadline-badge');
+        if (!idx) return;
+        const dl = parseDate(deadlineStr);
+        const textEl = idx.querySelector('.dl-text');
+
+        if (!dl) {
+            idx.className = 'deadline-badge';
+            idx.style.background = 'rgba(100,116,139,0.1)';
+            idx.style.color = '#64748b';
+            textEl.textContent = 'ไม่ระบุ';
+            idx.querySelector('i').className = 'bi bi-question-circle';
+            return;
+        }
+
+        const diffMs = dl - now;
+        const diffDays = Math.ceil(diffMs / (1000 * 60 * 60 * 24));
+
+        textEl.textContent = thaiDate(deadlineStr);
+
+        if (diffDays < 0) {
+            idx.className = 'deadline-badge closed';
+            idx.querySelector('i').className = 'bi bi-x-circle';
+        } else if (diffDays <= 7) {
+            idx.className = 'deadline-badge urgent';
+            idx.querySelector('i').className = 'bi bi-exclamation-circle';
+        } else {
+            idx.className = 'deadline-badge open';
+            idx.querySelector('i').className = 'bi bi-calendar-check';
+        }
+    });
+}
+
+// ===== Save/bookmark =====
+function toggleSave(btn, title) {
+    btn.classList.toggle('saved');
+    const icon = btn.querySelector('i');
+    if (btn.classList.contains('saved')) {
+        icon.className = 'bi bi-bookmark-check-fill';
+        // Persist in localStorage
+        let saved = JSON.parse(localStorage.getItem('savedScholarships') || '[]');
+        if (!saved.includes(title)) saved.push(title);
+        localStorage.setItem('savedScholarships', JSON.stringify(saved));
+    } else {
+        icon.className = 'bi bi-bookmark';
+        let saved = JSON.parse(localStorage.getItem('savedScholarships') || '[]');
+        saved = saved.filter(t => t !== title);
+        localStorage.setItem('savedScholarships', JSON.stringify(saved));
+    }
+}
+
+function restoreSaved() {
+    const saved = JSON.parse(localStorage.getItem('savedScholarships') || '[]');
+    document.querySelectorAll('.btn-save').forEach(btn => {
+        const title = btn.getAttribute('onclick')?.match(/toggleSave\(this, '([^']+)'\)/)?.[1];
+        if (title && saved.includes(title)) {
+            btn.classList.add('saved');
+            btn.querySelector('i').className = 'bi bi-bookmark-check-fill';
+        }
+    });
+}
+
+// ===== Filters =====
+function applyFilters() {
+    const search = document.getElementById('searchInput').value.toLowerCase();
+    const level = document.getElementById('levelFilter').value;
+    const type = document.getElementById('typeFilter').value;
+    const field = document.getElementById('fieldFilter').value;
+    const status = document.getElementById('statusFilter').value;
+
+    const now = new Date();
+    const cards = document.querySelectorAll('.scholarship-card');
+    let visibleCount = 0;
+
+    cards.forEach(card => {
+        const title = card.dataset.title;
+        const provider = card.dataset.provider;
+        const cat = card.dataset.category;
+        const fld = card.dataset.field;
+        const lvl = card.dataset.level;
+        const deadlineStr = card.dataset.deadline;
+
+        const matchSearch = !search ||
+            title.includes(search) ||
+            provider.includes(search) ||
+            fld.includes(search);
+
+        // Level matching
+        let matchLevel = !level;
+        if (level === 'faculty') matchLevel = lvl.includes('อาจารย์');
+        if (level === 'researcher') matchLevel = lvl.includes('นักวิจัย') || lvl.includes('researcher');
+        if (level === 'student') matchLevel = lvl.includes('นักศึกษา') || lvl.includes('student');
+
+        const matchType = !type || cat === type || cat.includes(type);
+        const matchField = !field || fld.includes(field.toLowerCase());
+
+        // Status matching
+        let matchStatus = !status;
+        if (status) {
+            const dl = parseDate(deadlineStr);
+            if (!dl) {
+                matchStatus = status === '';
+            } else {
+                const diffDays = Math.ceil((dl - now) / (1000 * 60 * 60 * 24));
+                if (status === 'open') matchStatus = diffDays >= 7;
+                if (status === 'urgent') matchStatus = diffDays >= 0 && diffDays <= 7;
+                if (status === 'closed') matchStatus = diffDays < 0;
+            }
+        }
+
+        const visible = matchSearch && matchLevel && matchType && matchField && matchStatus;
+        card.closest('.col-12, .col-md-6, .col-lg-4').style.display = visible ? '' : 'none';
+        if (visible) visibleCount++;
+    });
+
+    // Update counts
+    const total = parseInt('{{ total }}');
+    document.getElementById('showingCount').textContent = visibleCount;
+    document.getElementById('filteredCount').textContent = visibleCount;
+
+    // Show/hide no-results
+    const list = document.getElementById('scholarshipList');
+    const noResults = document.getElementById('noResults');
+    const hasCards = list.querySelectorAll('.scholarship-card').length > 0;
+    noResults.style.display = (!hasCards || visibleCount === 0) && hasCards ? '' : 'none';
+}
+
+// Clear all filters
+function clearFilters() {
+    document.getElementById('searchInput').value = '';
+    document.getElementById('levelFilter').value = '';
+    document.getElementById('typeFilter').value = '';
+    document.getElementById('fieldFilter').value = '';
+    document.getElementById('statusFilter').value = '';
+    applyFilters();
+}
+
+// Event listeners
+document.getElementById('searchInput').addEventListener('input', applyFilters);
+document.getElementById('levelFilter').addEventListener('change', applyFilters);
+document.getElementById('typeFilter').addEventListener('change', applyFilters);
+document.getElementById('fieldFilter').addEventListener('change', applyFilters);
+document.getElementById('statusFilter').addEventListener('change', applyFilters);
+
+// Scroll to top button
+window.addEventListener('scroll', () => {
+    const btn = document.getElementById('scrollTopBtn');
+    btn.classList.toggle('show', window.scrollY > 300);
+});
+
+// ===== Scrape =====
 function runScrape() {
     const btn = document.getElementById('scrapeBtn');
     const spinner = document.getElementById('loadingSpinner');
     const result = document.getElementById('scrapeResult');
-    
+
     btn.disabled = true;
     spinner.style.display = 'inline-block';
     result.textContent = 'กำลัง scrape ข้อมูล...';
-    result.className = 'mt-2 small text-info';
-    
+    result.className = 'mt-1 text-info';
+
     fetch('/scrape', { method: 'POST' })
         .then(r => r.json())
         .then(data => {
@@ -283,44 +718,27 @@ function runScrape() {
             btn.disabled = false;
             if (data.success) {
                 result.textContent = `✅ เก็บข้อมูลได้ ${data.count} รายการ (${data.updated})`;
-                result.className = 'mt-2 small text-success';
+                result.className = 'mt-1 text-success';
                 setTimeout(() => location.reload(), 1500);
             } else {
                 result.textContent = '❌ เกิดข้อผิดพลาด: ' + data.error;
-                result.className = 'mt-2 small text-danger';
+                result.className = 'mt-1 text-danger';
             }
         })
         .catch(err => {
             spinner.style.display = 'none';
             btn.disabled = false;
             result.textContent = '❌ เกิดข้อผิดพลาด: ' + err;
-            result.className = 'mt-2 small text-danger';
+            result.className = 'mt-1 text-danger';
         });
 }
 
-// Client-side filter
-function applyFilters() {
-    const search = document.getElementById('searchInput').value.toLowerCase();
-    const category = document.getElementById('categoryFilter').value;
-    const field = document.getElementById('fieldFilter').value;
-    
-    const cards = document.querySelectorAll('.scholarship-card');
-    cards.forEach(card => {
-        const title = card.dataset.title;
-        const cat = card.dataset.category;
-        const fld = card.dataset.field;
-        
-        const matchSearch = !search || title.includes(search);
-        const matchCat = !category || cat === category;
-        const matchField = !field || fld.includes(field.toLowerCase());
-        
-        card.style.display = (matchSearch && matchCat && matchField) ? '' : 'none';
-    });
-}
-
-document.getElementById('searchInput').addEventListener('input', applyFilters);
-document.getElementById('categoryFilter').addEventListener('change', applyFilters);
-document.getElementById('fieldFilter').addEventListener('change', applyFilters);
+// ===== Init =====
+document.addEventListener('DOMContentLoaded', () => {
+    initDeadlineBadges();
+    restoreSaved();
+    applyFilters();
+});
 </script>
 </body>
 </html>
