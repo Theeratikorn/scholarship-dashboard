@@ -175,7 +175,7 @@
     },
     {
       "name": "มหาวิทยาลัยขอนแก่น - ทุนการศึกษา",
-      "url": "https://reg.kku.ac.th/website/?page_id=ทุน",
+      "url": "https://www.kku.ac.th/เีรื่อง/ทุนการศึกษา",
       "type": "university",
       "fields": [
         "วิศวกรรมเครื่องกล",
@@ -202,7 +202,7 @@
     },
     {
       "name": "มหาวิทยาลัยเชียงใหม่ - ทุนการศึกษา",
-      "url": "https://www.cmu.ac.th/th/scholarship",
+      "url": "https://www.cmu.ac.th/ent/ent_scholarship",
       "type": "university",
       "fields": [
         "วิศวกรรมเครื่องกล",
@@ -283,7 +283,7 @@
     },
     {
       "name": "มหาวิทยาลัยมหิดล - ทุนการศึกษา",
-      "url": "https://www.mahidol.ac.th/th/scholarship",
+      "url": "https://www.mahidol.ac.th/scholarship",
       "type": "university",
       "fields": [
         "วิศวกรรมเครื่องกล",
@@ -311,7 +311,7 @@
     },
     {
       "name": "จุฬาลงกรณ์มหาวิทยาลัย - ทุนการศึกษา",
-      "url": "https://www.chula.ac.th/th/admission/scholarship",
+      "url": "https://www.chula.ac.th/th/scholarship",
       "type": "university",
       "fields": [
         "วิศวกรรมเครื่องกล",
@@ -445,7 +445,7 @@
     },
     {
       "name": "มหาวิทยาลัยอุดรธานี - ทุนการศึกษา",
-      "url": "https://www.udru.ac.th/scholarship",
+      "url": "https://www.udu.ac.th/scholarship",
       "type": "university",
       "fields": [
         "วิศวกรรมเครื่องกล",
@@ -470,7 +470,7 @@
     },
     {
       "name": "มหาวิทยาลัยสุโขทัยธรรมาธิราช - ทุนการศึกษา",
-      "url": "https://www.stou.ac.th/th/scholarship",
+      "url": "https://www.stou.ac.th/scholarship",
       "type": "university",
       "fields": [
         "วิศวกรรมเครื่องกล",
@@ -599,7 +599,7 @@
     },
     {
       "name": "มหาวิทยาลัยสงขลา - ทุนการศึกษา",
-      "url": "https://www.psu.ac.th/scholarship",
+      "url": "https://www.psu.ac.th/th/scholarship",
       "type": "university",
       "fields": [
         "วิศวกรรมเครื่องกล",
@@ -828,7 +828,7 @@
     },
     {
       "name": "มหาวิทยาลัยศิลปากร - ทุนการศึกษา",
-      "url": "https://www.su.ac.th/scholarship",
+      "url": "https://www.silpakorn.edu/scholarship",
       "type": "university",
       "fields": [
         "วิศวกรรมเครื่องกล",
