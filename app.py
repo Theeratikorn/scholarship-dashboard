@@ -376,9 +376,28 @@ def index():
 @app.route('/scrape', methods=['POST'])
 def scrape():
     try:
+        logger.info('Scrape requested via API')
+        # Timeout for scrape - don't hang forever
+        import signal
+        def timeout_handler(signum, frame):
+            raise TimeoutError('Scrape timeout')
+        signal.signal(signal.SIGALRM, timeout_handler)
+        signal.alarm(30)  # 30 second timeout
+        
         data = run_scrape()
-        return jsonify({'success': True, 'count': len(data), 'updated': get_last_update()})
+        signal.alarm(0)  # Cancel alarm
+        
+        return jsonify({
+            'success': True, 
+            'count': len(data), 
+            'updated': get_last_update(),
+            'sources': ['NIA', 'NRCT', 'NSTDA', 'ScholarshipThai']
+        })
+    except TimeoutError:
+        logger.error('Scrape timeout')
+        return jsonify({'success': False, 'error': 'Scrape ใช้เวลานานเกินไป ลองอีกครั้ง'}), 408
     except Exception as e:
+        logger.error(f'Scrape error: {e}')
         return jsonify({'success': False, 'error': str(e)}), 500
 
 @app.route('/api/scholarships')
