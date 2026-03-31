@@ -339,6 +339,8 @@ if os.environ.get('RAILWAY_ENVIRONMENT') is None:
 @app.route('/health')
 def health():
     """Health check endpoint - Railway needs this"""
+    import logging
+    logging.warning('HEALTH CHECK HIT')
     return 'OK', 200
 
 @app.route('/')
