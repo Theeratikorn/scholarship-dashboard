@@ -1,0 +1,1121 @@
+{
+  "version": "1.0",
+  "updated_at": "2026-03-31",
+  "description": "Auto-scrape config for Thai scholarship/research funding websites",
+  "sources": [
+
+    {
+      "name": "สำนักงานการวิจัยแห่งชาติ (NRCT)",
+      "url": "https://www.nrct.go.th/news/listgroup/299",
+      "type": "government",
+      "fields": ["วิศวกรรมเครื่องกล", "หุ่นยนต์", "วิศวกรรมการแพทย์", "การแพทย์", "ชีวกลศาสตร์", "Biomedical Engineering", "Health Tech", "ไฟฟ้า", "AI"],
+      "scrape_config": {
+        "method": "selenium",
+        "title_selector": "h3, .title, .news-title, article h3, .list-group-item",
+        "deadline_selector": ".date, .deadline, time",
+        "amount_selector": ".amount, .budget",
+        "eligibility_selector": ".description, .summary",
+        "link_selector": "a[href*='news'], a[href*='ทุน'], a",
+        "link_base_url": "https://www.nrct.go.th",
+        "pagination": {
+          "enabled": true,
+          "next_button_selector": "a.next, .pagination .next, a[rel='next'], .page-item a",
+          "max_pages": 10
+        }
+      }
+    },
+
+    {
+      "name": "สำนักงานนวัตกรรมแห่งชาติ (NIA)",
+      "url": "https://www.nia.or.th",
+      "type": "government",
+      "fields": ["นวัตกรรม", "AI", "Data Science", "Smart Manufacturing", "Health Tech", "MedTech"],
+      "scrape_config": {
+        "method": "beautifulsoup",
+        "title_selector": "h2, h3, .title, .news-title, article h3, .card h3",
+        "deadline_selector": ".date, .deadline, time, .card-date",
+        "amount_selector": ".amount, .budget, .fund",
+        "eligibility_selector": ".description, .summary, .detail, p",
+        "link_selector": "a[href*='ทุน'], a[href*='scholarship'], a[href*='นวัตกรรม'], a.card",
+        "link_base_url": "https://www.nia.or.th",
+        "pagination": {
+          "enabled": true,
+          "next_button_selector": "a.next, .pagination .next, a[rel='next'], .view-more",
+          "max_pages": 10
+        }
+      }
+    },
+
+    {
+      "name": "สถาบันนโยบายวิทย์ (NSTDA)",
+      "url": "https://www.nstda.or.th/careers",
+      "type": "government",
+      "fields": ["วิศวกรรมเครื่องกล", "หุ่นยนต์", "ไฟฟ้า", "อิเล็กทรอนิกส์", "AI", "Data Science", "Biomedical Engineering"],
+      "scrape_config": {
+        "method": "beautifulsoup",
+        "title_selector": "h2, h3, .title, .news-title, article h3, h4",
+        "deadline_selector": ".date, .deadline, time",
+        "amount_selector": ".amount, .budget, .scholarship",
+        "eligibility_selector": ".description, .summary, .detail, .requirement",
+        "link_selector": "a[href*='ทุน'], a[href*='scholarship'], a[href*='career'], a",
+        "link_base_url": "https://www.nstda.or.th",
+        "pagination": {
+          "enabled": true,
+          "next_button_selector": "a.next, .pagination .next",
+          "max_pages": 5
+        }
+      }
+    },
+
+    {
+      "name": "กระทรวงการอุดมศึกษาฯ (MHESI)",
+      "url": "https://www.mhesi.go.th/ข่าวประกาศ",
+      "type": "government",
+      "fields": ["วิศวกรรมเครื่องกล", "หุ่นยนต์", "วิศวกรรมการแพทย์", "การแพทย์", "ไฟฟ้า", "AI", "Health Tech"],
+      "scrape_config": {
+        "method": "beautifulsoup",
+        "title_selector": "h2, h3, .title, .news-title, article h3, .card-title",
+        "deadline_selector": ".date, .deadline, time, .card-date",
+        "amount_selector": ".amount, .budget, .scholarship-amount",
+        "eligibility_selector": ".description, .summary, .detail, .requirement",
+        "link_selector": "a[href*='ทุน'], a[href*='scholarship'], a[href*='การศึกษา'], a",
+        "link_base_url": "https://www.mhesi.go.th",
+        "pagination": {
+          "enabled": true,
+          "next_button_selector": "a.next, .pagination .next, a[rel='next']",
+          "max_pages": 10
+        }
+      }
+    },
+
+    {
+      "name": "กระทรวงสาธารณสุข (MoPH)",
+      "url": "https://www.moph.go.th/news",
+      "type": "government",
+      "fields": ["การแพทย์", "วิศวกรรมการแพทย์", "Biomedical Engineering", "Health Tech", "MedTech", "ชีวกลศาสตร์"],
+      "scrape_config": {
+        "method": "beautifulsoup",
+        "title_selector": "h2, h3, .title, .news-title, article h3",
+        "deadline_selector": ".date, .deadline, time",
+        "amount_selector": ".amount, .budget",
+        "eligibility_selector": ".description, .summary, .detail",
+        "link_selector": "a[href*='ทุน'], a[href*='scholarship'], a[href*='การศึกษา'], a",
+        "link_base_url": "https://www.moph.go.th",
+        "pagination": {
+          "enabled": true,
+          "next_button_selector": "a.next, .pagination .next",
+          "max_pages": 10
+        }
+      }
+    },
+
+    {
+      "name": "กองทุนเงินให้กู้ยืมเพื่อการศึกษา (กยศ.)",
+      "url": "https://www.studentloan.or.th",
+      "type": "government",
+      "fields": ["วิศวกรรมเครื่องกล", "หุ่นยนต์", "วิศวกรรมการแพทย์", "การแพทย์", "ไฟฟ้า", "AI", "ทุกสาขา"],
+      "scrape_config": {
+        "method": "selenium",
+        "title_selector": "h2, h3, .title, .card-title, .news-title",
+        "deadline_selector": ".date, .deadline, time",
+        "amount_selector": ".amount, .loan-amount",
+        "eligibility_selector": ".description, .summary, .detail, .requirement",
+        "link_selector": "a[href*='ทุน'], a[href*='scholarship'], a",
+        "link_base_url": "https://www.studentloan.or.th",
+        "pagination": {
+          "enabled": true,
+          "next_button_selector": "a.next, .pagination .next, button.next",
+          "max_pages": 5
+        }
+      }
+    },
+
+    {
+      "name": "มหาวิทยาลัยขอนแก่น - ทุนการศึกษา",
+      "url": "https://reg.kku.ac.th/website/?page_id=ทุน",
+      "type": "university",
+      "fields": ["วิศวกรรมเครื่องกล", "หุ่นยนต์", "วิศวกรรมการแพทย์", "การแพทย์", "ไฟฟ้า", "AI"],
+      "scrape_config": {
+        "method": "beautifulsoup",
+        "title_selector": "h2, h3, .title, .news-title, article h3, .card-title",
+        "deadline_selector": ".date, .deadline, time",
+        "amount_selector": ".amount, .budget",
+        "eligibility_selector": ".description, .summary, .detail",
+        "link_selector": "a[href*='ทุน'], a[href*='scholarship'], a",
+        "link_base_url": "https://reg.kku.ac.th",
+        "pagination": {
+          "enabled": false,
+          "next_button_selector": "",
+          "max_pages": 1
+        }
+      }
+    },
+
+    {
+      "name": "มหาวิทยาลัยเชียงใหม่ - ทุนการศึกษา",
+      "url": "https://www.cmu.ac.th/th/scholarship",
+      "type": "university",
+      "fields": ["วิศวกรรมเครื่องกล", "หุ่นยนต์", "วิศวกรรมการแพทย์", "การแพทย์", "ไฟฟ้า", "AI"],
+      "scrape_config": {
+        "method": "beautifulsoup",
+        "title_selector": "h2, h3, .title, .news-title, article h3, .card-title",
+        "deadline_selector": ".date, .deadline, time",
+        "amount_selector": ".amount, .budget",
+        "eligibility_selector": ".description, .summary, .detail",
+        "link_selector": "a[href*='ทุน'], a[href*='scholarship'], a",
+        "link_base_url": "https://www.cmu.ac.th",
+        "pagination": {
+          "enabled": true,
+          "next_button_selector": "a.next, .pagination .next",
+          "max_pages": 5
+        }
+      }
+    },
+
+    {
+      "name": "มหาวิทยาลัยสงขลา - ทุนการศึกษา",
+      "url": "https://www.psu.ac.th/th/scholarship",
+      "type": "university",
+      "fields": ["วิศวกรรมเครื่องกล", "หุ่นยนต์", "วิศวกรรมการแพทย์", "การแพทย์", "ไฟฟ้า", "AI"],
+      "scrape_config": {
+        "method": "beautifulsoup",
+        "title_selector": "h2, h3, .title, .news-title, article h3, .card-title",
+        "deadline_selector": ".date, .deadline, time",
+        "amount_selector": ".amount, .budget",
+        "eligibility_selector": ".description, .summary, .detail",
+        "link_selector": "a[href*='ทุน'], a[href*='scholarship'], a",
+        "link_base_url": "https://www.psu.ac.th",
+        "pagination": {
+          "enabled": false,
+          "next_button_selector": "",
+          "max_pages": 1
+        }
+      }
+    },
+
+    {
+      "name": "มหาวิทยาลัยธรรมศาสตร์ - ทุนการศึกษา",
+      "url": "https://www.tu.ac.th/th/scholarship",
+      "type": "university",
+      "fields": ["วิศวกรรมเครื่องกล", "หุ่นยนต์", "วิศวกรรมการแพทย์", "การแพทย์", "ไฟฟ้า", "AI"],
+      "scrape_config": {
+        "method": "beautifulsoup",
+        "title_selector": "h2, h3, .title, .news-title, article h3, .card-title",
+        "deadline_selector": ".date, .deadline, time",
+        "amount_selector": ".amount, .budget",
+        "eligibility_selector": ".description, .summary, .detail",
+        "link_selector": "a[href*='ทุน'], a[href*='scholarship'], a",
+        "link_base_url": "https://www.tu.ac.th",
+        "pagination": {
+          "enabled": false,
+          "next_button_selector": "",
+          "max_pages": 1
+        }
+      }
+    },
+
+    {
+      "name": "มหาวิทยาลัยมหิดล - ทุนการศึกษา",
+      "url": "https://www.mahidol.ac.th/th/scholarship",
+      "type": "university",
+      "fields": ["วิศวกรรมเครื่องกล", "หุ่นยนต์", "วิศวกรรมการแพทย์", "การแพทย์", "ไฟฟ้า", "AI", "Health Tech"],
+      "scrape_config": {
+        "method": "beautifulsoup",
+        "title_selector": "h2, h3, .title, .news-title, article h3, .card-title",
+        "deadline_selector": ".date, .deadline, time",
+        "amount_selector": ".amount, .budget",
+        "eligibility_selector": ".description, .summary, .detail",
+        "link_selector": "a[href*='ทุน'], a[href*='scholarship'], a",
+        "link_base_url": "https://www.mahidol.ac.th",
+        "pagination": {
+          "enabled": false,
+          "next_button_selector": "",
+          "max_pages": 1
+        }
+      }
+    },
+
+    {
+      "name": "จุฬาลงกรณ์มหาวิทยาลัย - ทุนการศึกษา",
+      "url": "https://www.chula.ac.th/th/admission/scholarship",
+      "type": "university",
+      "fields": ["วิศวกรรมเครื่องกล", "หุ่นยนต์", "วิศวกรรมการแพทย์", "การแพทย์", "ไฟฟ้า", "AI"],
+      "scrape_config": {
+        "method": "beautifulsoup",
+        "title_selector": "h2, h3, .title, .news-title, article h3, .card-title",
+        "deadline_selector": ".date, .deadline, time",
+        "amount_selector": ".amount, .budget",
+        "eligibility_selector": ".description, .summary, .detail",
+        "link_selector": "a[href*='ทุน'], a[href*='scholarship'], a",
+        "link_base_url": "https://www.chula.ac.th",
+        "pagination": {
+          "enabled": false,
+          "next_button_selector": "",
+          "max_pages": 1
+        }
+      }
+    },
+
+    {
+      "name": "มหาวิทยาลัยเกษตรศาสตร์ - ทุนการศึกษา",
+      "url": "https://www.ku.ac.th/th/scholarship",
+      "type": "university",
+      "fields": ["วิศวกรรมเครื่องกล", "หุ่นยนต์", "วิศวกรรมการแพทย์", "การแพทย์", "ไฟฟ้า", "AI"],
+      "scrape_config": {
+        "method": "beautifulsoup",
+        "title_selector": "h2, h3, .title, .news-title, article h3, .card-title",
+        "deadline_selector": ".date, .deadline, time",
+        "amount_selector": ".amount, .budget",
+        "eligibility_selector": ".description, .summary, .detail",
+        "link_selector": "a[href*='ทุน'], a[href*='scholarship'], a",
+        "link_base_url": "https://www.ku.ac.th",
+        "pagination": {
+          "enabled": false,
+          "next_button_selector": "",
+          "max_pages": 1
+        }
+      }
+    },
+
+    {
+      "name": "มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าเจ้าคุณดลกระบัง - ทุนการศึกษา",
+      "url": "https://www.kmitl.ac.th/th/scholarship",
+      "type": "university",
+      "fields": ["วิศวกรรมเครื่องกล", "หุ่นยนต์", "ไฟฟ้า", "อิเล็กทรอนิกส์", "AI", "Smart Manufacturing"],
+      "scrape_config": {
+        "method": "beautifulsoup",
+        "title_selector": "h2, h3, .title, .news-title, article h3, .card-title",
+        "deadline_selector": ".date, .deadline, time",
+        "amount_selector": ".amount, .budget",
+        "eligibility_selector": ".description, .summary, .detail",
+        "link_selector": "a[href*='ทุน'], a[href*='scholarship'], a",
+        "link_base_url": "https://www.kmitl.ac.th",
+        "pagination": {
+          "enabled": false,
+          "next_button_selector": "",
+          "max_pages": 1
+        }
+      }
+    },
+
+    {
+      "name": "มหาวิทยาลัยบางเขน - ทุนการศึกษา",
+      "url": "https://www.bangmod.ac.th/scholarship",
+      "type": "university",
+      "fields": ["วิศวกรรมเครื่องกล", "หุ่นยนต์", "ไฟฟ้า", "อิเล็กทรอนิกส์", "AI"],
+      "scrape_config": {
+        "method": "beautifulsoup",
+        "title_selector": "h2, h3, .title, .news-title, article h3, .card-title",
+        "deadline_selector": ".date, .deadline, time",
+        "amount_selector": ".amount, .budget",
+        "eligibility_selector": ".description, .summary, .detail",
+        "link_selector": "a[href*='ทุน'], a[href*='scholarship'], a",
+        "link_base_url": "https://www.bangmod.ac.th",
+        "pagination": {
+          "enabled": false,
+          "next_button_selector": "",
+          "max_pages": 1
+        }
+      }
+    },
+
+    {
+      "name": "มหาวิทยาลัยมหาสารคาม - ทุนการศึกษา",
+      "url": "https://www.msu.ac.th/th/scholarship",
+      "type": "university",
+      "fields": ["วิศวกรรมเครื่องกล", "หุ่นยนต์", "วิศวกรรมการแพทย์", "การแพทย์", "ไฟฟ้า", "AI"],
+      "scrape_config": {
+        "method": "beautifulsoup",
+        "title_selector": "h2, h3, .title, .news-title, article h3, .card-title",
+        "deadline_selector": ".date, .deadline, time",
+        "amount_selector": ".amount, .budget",
+        "eligibility_selector": ".description, .summary, .detail",
+        "link_selector": "a[href*='ทุน'], a[href*='scholarship'], a",
+        "link_base_url": "https://www.msu.ac.th",
+        "pagination": {
+          "enabled": false,
+          "next_button_selector": "",
+          "max_pages": 1
+        }
+      }
+    },
+
+    {
+      "name": "มหาวิทยาลัยอุดรธานี - ทุนการศึกษา",
+      "url": "https://www.udru.ac.th/scholarship",
+      "type": "university",
+      "fields": ["วิศวกรรมเครื่องกล", "หุ่นยนต์", "ไฟฟ้า", "AI"],
+      "scrape_config": {
+        "method": "beautifulsoup",
+        "title_selector": "h2, h3, .title, .news-title, article h3, .card-title",
+        "deadline_selector": ".date, .deadline, time",
+        "amount_selector": ".amount, .budget",
+        "eligibility_selector": ".description, .summary, .detail",
+        "link_selector": "a[href*='ทุน'], a[href*='scholarship'], a",
+        "link_base_url": "https://www.udru.ac.th",
+        "pagination": {
+          "enabled": false,
+          "next_button_selector": "",
+          "max_pages": 1
+        }
+      }
+    },
+
+    {
+      "name": "มหาวิทยาลัยสุโขทัยธรรมาธิราช - ทุนการศึกษา",
+      "url": "https://www.stou.ac.th/th/scholarship",
+      "type": "university",
+      "fields": ["วิศวกรรมเครื่องกล", "หุ่นยนต์", "ไฟฟ้า", "AI", "ทุกสาขา"],
+      "scrape_config": {
+        "method": "beautifulsoup",
+        "title_selector": "h2, h3, .title, .news-title, article h3, .card-title",
+        "deadline_selector": ".date, .deadline, time",
+        "amount_selector": ".amount, .budget",
+        "eligibility_selector": ".description, .summary, .detail",
+        "link_selector": "a[href*='ทุน'], a[href*='scholarship'], a",
+        "link_base_url": "https://www.stou.ac.th",
+        "pagination": {
+          "enabled": false,
+          "next_button_selector": "",
+          "max_pages": 1
+        }
+      }
+    },
+
+    {
+      "name": "มหาวิทยาลัยบูรพา - ทุนการศึกษา",
+      "url": "https://www.buu.ac.th/scholarship",
+      "type": "university",
+      "fields": ["วิศวกรรมเครื่องกล", "หุ่นยนต์", "วิศวกรรมการแพทย์", "การแพทย์", "ไฟฟ้า", "AI"],
+      "scrape_config": {
+        "method": "beautifulsoup",
+        "title_selector": "h2, h3, .title, .news-title, article h3, .card-title",
+        "deadline_selector": ".date, .deadline, time",
+        "amount_selector": ".amount, .budget",
+        "eligibility_selector": ".description, .summary, .detail",
+        "link_selector": "a[href*='ทุน'], a[href*='scholarship'], a",
+        "link_base_url": "https://www.buu.ac.th",
+        "pagination": {
+          "enabled": false,
+          "next_button_selector": "",
+          "max_pages": 1
+        }
+      }
+    },
+
+    {
+      "name": "มหาวิทยาลัยแม่โจ้ - ทุนการศึกษา",
+      "url": "https://www.mju.ac.th/scholarship",
+      "type": "university",
+      "fields": ["วิศวกรรมเครื่องกล", "หุ่นยนต์", "ไฟฟ้า", "AI"],
+      "scrape_config": {
+        "method": "beautifulsoup",
+        "title_selector": "h2, h3, .title, .news-title, article h3, .card-title",
+        "deadline_selector": ".date, .deadline, time",
+        "amount_selector": ".amount, .budget",
+        "eligibility_selector": ".description, .summary, .detail",
+        "link_selector": "a[href*='ทุน'], a[href*='scholarship'], a",
+        "link_base_url": "https://www.mju.ac.th",
+        "pagination": {
+          "enabled": false,
+          "next_button_selector": "",
+          "max_pages": 1
+        }
+      }
+    },
+
+    {
+      "name": "มหาวิทยาลัยนเรศวร - ทุนการศึกษา",
+      "url": "https://www.nida.ac.th/scholarship",
+      "type": "university",
+      "fields": ["วิศวกรรมเครื่องกล", "หุ่นยนต์", "ไฟฟ้า", "AI", "ทุกสาขา"],
+      "scrape_config": {
+        "method": "beautifulsoup",
+        "title_selector": "h2, h3, .title, .news-title, article h3, .card-title",
+        "deadline_selector": ".date, .deadline, time",
+        "amount_selector": ".amount, .budget",
+        "eligibility_selector": ".description, .summary, .detail",
+        "link_selector": "a[href*='ทุน'], a[href*='scholarship'], a",
+        "link_base_url": "https://www.nida.ac.th",
+        "pagination": {
+          "enabled": false,
+          "next_button_selector": "",
+          "max_pages": 1
+        }
+      }
+    },
+
+    {
+      "name": "มหาวิทยาลัยอุบลราชธานี - ทุนการศึกษา",
+      "url": "https://www.ubru.ac.th/scholarship",
+      "type": "university",
+      "fields": ["วิศวกรรมเครื่องกล", "หุ่นยนต์", "ไฟฟ้า", "AI"],
+      "scrape_config": {
+        "method": "beautifulsoup",
+        "title_selector": "h2, h3, .title, .news-title, article h3, .card-title",
+        "deadline_selector": ".date, .deadline, time",
+        "amount_selector": ".amount, .budget",
+        "eligibility_selector": ".description, .summary, .detail",
+        "link_selector": "a[href*='ทุน'], a[href*='scholarship'], a",
+        "link_base_url": "https://www.ubru.ac.th",
+        "pagination": {
+          "enabled": false,
+          "next_button_selector": "",
+          "max_pages": 1
+        }
+      }
+    },
+
+    {
+      "name": "มหาวิทยาลัยสงขลา - ทุนการศึกษา",
+      "url": "https://www.psu.ac.th/scholarship",
+      "type": "university",
+      "fields": ["วิศวกรรมเครื่องกล", "หุ่นยนต์", "วิศวกรรมการแพทย์", "การแพทย์", "ไฟฟ้า", "AI"],
+      "scrape_config": {
+        "method": "beautifulsoup",
+        "title_selector": "h2, h3, .title, .news-title, article h3, .card-title",
+        "deadline_selector": ".date, .deadline, time",
+        "amount_selector": ".amount, .budget",
+        "eligibility_selector": ".description, .summary, .detail",
+        "link_selector": "a[href*='ทุน'], a[href*='scholarship'], a",
+        "link_base_url": "https://www.psu.ac.th",
+        "pagination": {
+          "enabled": false,
+          "next_button_selector": "",
+          "max_pages": 1
+        }
+      }
+    },
+
+    {
+      "name": "มหาวิทยาลัยภูเก็ต - ทุนการศึกษา",
+      "url": "https://www.phuket.psu.ac.th/scholarship",
+      "type": "university",
+      "fields": ["วิศวกรรมเครื่องกล", "หุ่นยนต์", "ไฟฟ้า", "AI"],
+      "scrape_config": {
+        "method": "beautifulsoup",
+        "title_selector": "h2, h3, .title, .news-title, article h3, .card-title",
+        "deadline_selector": ".date, .deadline, time",
+        "amount_selector": ".amount, .budget",
+        "eligibility_selector": ".description, .summary, .detail",
+        "link_selector": "a[href*='ทุน'], a[href*='scholarship'], a",
+        "link_base_url": "https://www.phuket.psu.ac.th",
+        "pagination": {
+          "enabled": false,
+          "next_button_selector": "",
+          "max_pages": 1
+        }
+      }
+    },
+
+    {
+      "name": "มหาวิทยาลัยพะเยา - ทุนการศึกษา",
+      "url": "https://www.up.ac.th/scholarship",
+      "type": "university",
+      "fields": ["วิศวกรรมเครื่องกล", "หุ่นยนต์", "ไฟฟ้า", "AI"],
+      "scrape_config": {
+        "method": "beautifulsoup",
+        "title_selector": "h2, h3, .title, .news-title, article h3, .card-title",
+        "deadline_selector": ".date, .deadline, time",
+        "amount_selector": ".amount, .budget",
+        "eligibility_selector": ".description, .summary, .detail",
+        "link_selector": "a[href*='ทุน'], a[href*='scholarship'], a",
+        "link_base_url": "https://www.up.ac.th",
+        "pagination": {
+          "enabled": false,
+          "next_button_selector": "",
+          "max_pages": 1
+        }
+      }
+    },
+
+    {
+      "name": "มหาวิทยาลัยรามคำแหง - ทุนการศึกษา",
+      "url": "https://www.ru.ac.th/scholarship",
+      "type": "university",
+      "fields": ["วิศวกรรมเครื่องกล", "หุ่นยนต์", "ไฟฟ้า", "AI", "ทุกสาขา"],
+      "scrape_config": {
+        "method": "beautifulsoup",
+        "title_selector": "h2, h3, .title, .news-title, article h3, .card-title",
+        "deadline_selector": ".date, .deadline, time",
+        "amount_selector": ".amount, .budget",
+        "eligibility_selector": ".description, .summary, .detail",
+        "link_selector": "a[href*='ทุน'], a[href*='scholarship'], a",
+        "link_base_url": "https://www.ru.ac.th",
+        "pagination": {
+          "enabled": false,
+          "next_button_selector": "",
+          "max_pages": 1
+        }
+      }
+    },
+
+    {
+      "name": "มหาวิทยาลัยกรุงเทพ - ทุนการศึกษา",
+      "url": "https://www.bu.ac.th/scholarship",
+      "type": "university",
+      "fields": ["วิศวกรรมเครื่องกล", "หุ่นยนต์", "ไฟฟ้า", "AI", "ทุกสาขา"],
+      "scrape_config": {
+        "method": "beautifulsoup",
+        "title_selector": "h2, h3, .title, .news-title, article h3, .card-title",
+        "deadline_selector": ".date, .deadline, time",
+        "amount_selector": ".amount, .budget",
+        "eligibility_selector": ".description, .summary, .detail",
+        "link_selector": "a[href*='ทุน'], a[href*='scholarship'], a",
+        "link_base_url": "https://www.bu.ac.th",
+        "pagination": {
+          "enabled": false,
+          "next_button_selector": "",
+          "max_pages": 1
+        }
+      }
+    },
+
+    {
+      "name": "มหาวิทยาลัยสกลนคร - ทุนการศึกษา",
+      "url": "https://www.skn.ac.th/scholarship",
+      "type": "university",
+      "fields": ["วิศวกรรมเครื่องกล", "หุ่นยนต์", "ไฟฟ้า", "AI"],
+      "scrape_config": {
+        "method": "beautifulsoup",
+        "title_selector": "h2, h3, .title, .news-title, article h3, .card-title",
+        "deadline_selector": ".date, .deadline, time",
+        "amount_selector": ".amount, .budget",
+        "eligibility_selector": ".description, .summary, .detail",
+        "link_selector": "a[href*='ทุน'], a[href*='scholarship'], a",
+        "link_base_url": "https://www.skn.ac.th",
+        "pagination": {
+          "enabled": false,
+          "next_button_selector": "",
+          "max_pages": 1
+        }
+      }
+    },
+
+    {
+      "name": "มหาวิทยาลัยร้อยเอ็ด - ทุนการศึกษา",
+      "url": "https://www.psru.ac.th/scholarship",
+      "type": "university",
+      "fields": ["วิศวกรรมเครื่องกล", "หุ่นยนต์", "ไฟฟ้า", "AI"],
+      "scrape_config": {
+        "method": "beautifulsoup",
+        "title_selector": "h2, h3, .title, .news-title, article h3, .card-title",
+        "deadline_selector": ".date, .deadline, time",
+        "amount_selector": ".amount, .budget",
+        "eligibility_selector": ".description, .summary, .detail",
+        "link_selector": "a[href*='ทุน'], a[href*='scholarship'], a",
+        "link_base_url": "https://www.psru.ac.th",
+        "pagination": {
+          "enabled": false,
+          "next_button_selector": "",
+          "max_pages": 1
+        }
+      }
+    },
+
+    {
+      "name": "มหาวิทยาลัยนครสวรรค์ - ทุนการศึกษา",
+      "url": "https://www.nwu.ac.th/scholarship",
+      "type": "university",
+      "fields": ["วิศวกรรมเครื่องกล", "หุ่นยนต์", "ไฟฟ้า", "AI"],
+      "scrape_config": {
+        "method": "beautifulsoup",
+        "title_selector": "h2, h3, .title, .news-title, article h3, .card-title",
+        "deadline_selector": ".date, .deadline, time",
+        "amount_selector": ".amount, .budget",
+        "eligibility_selector": ".description, .summary, .detail",
+        "link_selector": "a[href*='ทุน'], a[href*='scholarship'], a",
+        "link_base_url": "https://www.nwu.ac.th",
+        "pagination": {
+          "enabled": false,
+          "next_button_selector": "",
+          "max_pages": 1
+        }
+      }
+    },
+
+    {
+      "name": "มหาวิทยาลัยเชียงราย - ทุนการศึกษา",
+      "url": "https://www.crru.ac.th/scholarship",
+      "type": "university",
+      "fields": ["วิศวกรรมเครื่องกล", "หุ่นยนต์", "ไฟฟ้า", "AI"],
+      "scrape_config": {
+        "method": "beautifulsoup",
+        "title_selector": "h2, h3, .title, .news-title, article h3, .card-title",
+        "deadline_selector": ".date, .deadline, time",
+        "amount_selector": ".amount, .budget",
+        "eligibility_selector": ".description, .summary, .detail",
+        "link_selector": "a[href*='ทุน'], a[href*='scholarship'], a",
+        "link_base_url": "https://www.crru.ac.th",
+        "pagination": {
+          "enabled": false,
+          "next_button_selector": "",
+          "max_pages": 1
+        }
+      }
+    },
+
+    {
+      "name": "มหาวิทยาลัยศิลปากร - ทุนการศึกษา",
+      "url": "https://www.su.ac.th/scholarship",
+      "type": "university",
+      "fields": ["วิศวกรรมเครื่องกล", "หุ่นยนต์", "ไฟฟ้า", "AI", "ทุกสาขา"],
+      "scrape_config": {
+        "method": "beautifulsoup",
+        "title_selector": "h2, h3, .title, .news-title, article h3, .card-title",
+        "deadline_selector": ".date, .deadline, time",
+        "amount_selector": ".amount, .budget",
+        "eligibility_selector": ".description, .summary, .detail",
+        "link_selector": "a[href*='ทุน'], a[href*='scholarship'], a",
+        "link_base_url": "https://www.su.ac.th",
+        "pagination": {
+          "enabled": false,
+          "next_button_selector": "",
+          "max_pages": 1
+        }
+      }
+    },
+
+    {
+      "name": "มหาวิทยาลัยศรีนครินทร์ - ทุนการศึกษา",
+      "url": "https://www.psu.ac.th/scholarship",
+      "type": "university",
+      "fields": ["วิศวกรรมเครื่องกล", "หุ่นยนต์", "ไฟฟ้า", "AI"],
+      "scrape_config": {
+        "method": "beautifulsoup",
+        "title_selector": "h2, h3, .title, .news-title, article h3, .card-title",
+        "deadline_selector": ".date, .deadline, time",
+        "amount_selector": ".amount, .budget",
+        "eligibility_selector": ".description, .summary, .detail",
+        "link_selector": "a[href*='ทุน'], a[href*='scholarship'], a",
+        "link_base_url": "https://www.psu.ac.th",
+        "pagination": {
+          "enabled": false,
+          "next_button_selector": "",
+          "max_pages": 1
+        }
+      }
+    },
+
+    {
+      "name": "มหาวิทยาลัยสุราษฎร์ธานี - ทุนการศึกษา",
+      "url": "https://www.surat.psu.ac.th/scholarship",
+      "type": "university",
+      "fields": ["วิศวกรรมเครื่องกล", "หุ่นยนต์", "ไฟฟ้า", "AI"],
+      "scrape_config": {
+        "method": "beautifulsoup",
+        "title_selector": "h2, h3, .title, .news-title, article h3, .card-title",
+        "deadline_selector": ".date, .deadline, time",
+        "amount_selector": ".amount, .budget",
+        "eligibility_selector": ".description, .summary, .detail",
+        "link_selector": "a[href*='ทุน'], a[href*='scholarship'], a",
+        "link_base_url": "https://www.surat.psu.ac.th",
+        "pagination": {
+          "enabled": false,
+          "next_button_selector": "",
+          "max_pages": 1
+        }
+      }
+    },
+
+    {
+      "name": "มหาวิทยาลัยตรัง - ทุนการศึกษา",
+      "url": "https://www.tru.ac.th/scholarship",
+      "type": "university",
+      "fields": ["วิศวกรรมเครื่องกล", "หุ่นยนต์", "ไฟฟ้า", "AI"],
+      "scrape_config": {
+        "method": "beautifulsoup",
+        "title_selector": "h2, h3, .title, .news-title, article h3, .card-title",
+        "deadline_selector": ".date, .deadline, time",
+        "amount_selector": ".amount, .budget",
+        "eligibility_selector": ".description, .summary, .detail",
+        "link_selector": "a[href*='ทุน'], a[href*='scholarship'], a",
+        "link_base_url": "https://www.tru.ac.th",
+        "pagination": {
+          "enabled": false,
+          "next_button_selector": "",
+          "max_pages": 1
+        }
+      }
+    },
+
+    {
+      "name": "มหาวิทยาลัยสตูล - ทุนการศึกษา",
+      "url": "https://www.su.ac.th/scholarship",
+      "type": "university",
+      "fields": ["วิศวกรรมเครื่องกล", "หุ่นยนต์", "ไฟฟ้า", "AI"],
+      "scrape_config": {
+        "method": "beautifulsoup",
+        "title_selector": "h2, h3, .title, .news-title, article h3, .card-title",
+        "deadline_selector": ".date, .deadline, time",
+        "amount_selector": ".amount, .budget",
+        "eligibility_selector": ".description, .summary, .detail",
+        "link_selector": "a[href*='ทุน'], a[href*='scholarship'], a",
+        "link_base_url": "https://www.su.ac.th",
+        "pagination": {
+          "enabled": false,
+          "next_button_selector": "",
+          "max_pages": 1
+        }
+      }
+    },
+
+    {
+      "name": "มหาวิทยาลัยพายัพ - ทุนการศึกษา",
+      "url": "https://www.pcu.ac.th/scholarship",
+      "type": "university",
+      "fields": ["วิศวกรรมเครื่องกล", "หุ่นยนต์", "ไฟฟ้า", "AI"],
+      "scrape_config": {
+        "method": "beautifulsoup",
+        "title_selector": "h2, h3, .title, .news-title, article h3, .card-title",
+        "deadline_selector": ".date, .deadline, time",
+        "amount_selector": ".amount, .budget",
+        "eligibility_selector": ".description, .summary, .detail",
+        "link_selector": "a[href*='ทุน'], a[href*='scholarship'], a",
+        "link_base_url": "https://www.pcu.ac.th",
+        "pagination": {
+          "enabled": false,
+          "next_button_selector": "",
+          "max_pages": 1
+        }
+      }
+    },
+
+    {
+      "name": "มหาวิทยาลัยราชภัฏเพชรบุรี - ทุนการศึกษา",
+      "url": "https://www.pcrru.ac.th/scholarship",
+      "type": "university",
+      "fields": ["วิศวกรรมเครื่องกล", "หุ่นยนต์", "ไฟฟ้า", "AI"],
+      "scrape_config": {
+        "method": "beautifulsoup",
+        "title_selector": "h2, h3, .title, .news-title, article h3, .card-title",
+        "deadline_selector": ".date, .deadline, time",
+        "amount_selector": ".amount, .budget",
+        "eligibility_selector": ".description, .summary, .detail",
+        "link_selector": "a[href*='ทุน'], a[href*='scholarship'], a",
+        "link_base_url": "https://www.pcrru.ac.th",
+        "pagination": {
+          "enabled": false,
+          "next_button_selector": "",
+          "max_pages": 1
+        }
+      }
+    },
+
+    {
+      "name": "บริษัท PTT ประเทศไทย - ทุนการศึกษา",
+      "url": "https://www.pttplc.com/career-scholarship",
+      "type": "company",
+      "fields": ["วิศวกรรมเครื่องกล", "หุ่นยนต์", "ไฟฟ้า", "อิเล็กทรอนิกส์", "AI", "Smart Manufacturing", "Energy"],
+      "scrape_config": {
+        "method": "beautifulsoup",
+        "title_selector": "h2, h3, .title, .news-title, article h3, .card-title",
+        "deadline_selector": ".date, .deadline, time",
+        "amount_selector": ".amount, .budget",
+        "eligibility_selector": ".description, .summary, .detail",
+        "link_selector": "a[href*='ทุน'], a[href*='scholarship'], a",
+        "link_base_url": "https://www.pttplc.com",
+        "pagination": {
+          "enabled": false,
+          "next_button_selector": "",
+          "max_pages": 1
+        }
+      }
+    },
+
+    {
+      "name": "บริษัท SCB - ทุนการศึกษา",
+      "url": "https://www.scb.co.th/about/scholarship",
+      "type": "company",
+      "fields": ["AI", "Data Science", "ไฟฟ้า", "อิเล็กทรอนิกส์", "ทุกสาขา"],
+      "scrape_config": {
+        "method": "beautifulsoup",
+        "title_selector": "h2, h3, .title, .news-title, article h3, .card-title",
+        "deadline_selector": ".date, .deadline, time",
+        "amount_selector": ".amount, .budget",
+        "eligibility_selector": ".description, .summary, .detail",
+        "link_selector": "a[href*='ทุน'], a[href*='scholarship'], a",
+        "link_base_url": "https://www.scb.co.th",
+        "pagination": {
+          "enabled": false,
+          "next_button_selector": "",
+          "max_pages": 1
+        }
+      }
+    },
+
+    {
+      "name": "บริษัท SCG - ทุนการศึกษา",
+      "url": "https://www.scg.com/scholarship",
+      "type": "company",
+      "fields": ["วิศวกรรมเครื่องกล", "หุ่นยนต์", "ไฟฟ้า", "อิเล็กทรอนิกส์", "AI", "Smart Manufacturing", "Energy", "Materials"],
+      "scrape_config": {
+        "method": "beautifulsoup",
+        "title_selector": "h2, h3, .title, .news-title, article h3, .card-title",
+        "deadline_selector": ".date, .deadline, time",
+        "amount_selector": ".amount, .budget",
+        "eligibility_selector": ".description, .summary, .detail",
+        "link_selector": "a[href*='ทุน'], a[href*='scholarship'], a",
+        "link_base_url": "https://www.scg.com",
+        "pagination": {
+          "enabled": false,
+          "next_button_selector": "",
+          "max_pages": 1
+        }
+      }
+    },
+
+    {
+      "name": "บริษัท ปตท.สำรวจและผลิตปิโตรเลียม - ทุนการศึกษา",
+      "url": "https://www.pttep.com/careers/scholarship",
+      "type": "company",
+      "fields": ["วิศวกรรมเครื่องกล", "ไฟฟ้า", "อิเล็กทรอนิกส์", "AI", "Energy"],
+      "scrape_config": {
+        "method": "beautifulsoup",
+        "title_selector": "h2, h3, .title, .news-title, article h3, .card-title",
+        "deadline_selector": ".date, .deadline, time",
+        "amount_selector": ".amount, .budget",
+        "eligibility_selector": ".description, .summary, .detail",
+        "link_selector": "a[href*='ทุน'], a[href*='scholarship'], a",
+        "link_base_url": "https://www.pttep.com",
+        "pagination": {
+          "enabled": false,
+          "next_button_selector": "",
+          "max_pages": 1
+        }
+      }
+    },
+
+    {
+      "name": "บริษัท Gulf - ทุนการศึกษา",
+      "url": "https://www.gulf.co.th/career",
+      "type": "company",
+      "fields": ["วิศวกรรมเครื่องกล", "ไฟฟ้า", "อิเล็กทรอนิกส์", "AI", "Energy", "Smart Manufacturing"],
+      "scrape_config": {
+        "method": "beautifulsoup",
+        "title_selector": "h2, h3, .title, .news-title, article h3, .card-title",
+        "deadline_selector": ".date, .deadline, time",
+        "amount_selector": ".amount, .budget",
+        "eligibility_selector": ".description, .summary, .detail",
+        "link_selector": "a[href*='ทุน'], a[href*='scholarship'], a",
+        "link_base_url": "https://www.gulf.co.th",
+        "pagination": {
+          "enabled": false,
+          "next_button_selector": "",
+          "max_pages": 1
+        }
+      }
+    },
+
+    {
+      "name": "UNESCO Bangkok - ทุนการศึกษา",
+      "url": "https://bangkok.unesco.org/content/scholarships",
+      "type": "international",
+      "fields": ["วิศวกรรมเครื่องกล", "หุ่นยนต์", "วิศวกรรมการแพทย์", "การแพทย์", "ไฟฟ้า", "AI", "ทุกสาขา"],
+      "scrape_config": {
+        "method": "beautifulsoup",
+        "title_selector": "h2, h3, .title, .news-title, article h3, .card-title",
+        "deadline_selector": ".date, .deadline, time",
+        "amount_selector": ".amount, .budget",
+        "eligibility_selector": ".description, .summary, .detail",
+        "link_selector": "a[href*='scholarship'], a[href*='fellowship'], a",
+        "link_base_url": "https://bangkok.unesco.org",
+        "pagination": {
+          "enabled": true,
+          "next_button_selector": "a.next, .pagination .next",
+          "max_pages": 5
+        }
+      }
+    },
+
+    {
+      "name": "JICA Thailand - ทุนการศึกษา",
+      "url": "https://www.jica.go.jp/thailand/english/activities/scholarship",
+      "type": "international",
+      "fields": ["วิศวกรรมเครื่องกล", "หุ่นยนต์", "วิศวกรรมการแพทย์", "การแพทย์", "ไฟฟ้า", "AI", "ทุกสาขา"],
+      "scrape_config": {
+        "method": "beautifulsoup",
+        "title_selector": "h2, h3, .title, .news-title, article h3",
+        "deadline_selector": ".date, .deadline, time",
+        "amount_selector": ".amount, .budget",
+        "eligibility_selector": ".description, .summary, .detail",
+        "link_selector": "a[href*='scholarship'], a[href*='fellowship'], a",
+        "link_base_url": "https://www.jica.go.jp/thailand",
+        "pagination": {
+          "enabled": false,
+          "next_button_selector": "",
+          "max_pages": 1
+        }
+      }
+    },
+
+    {
+      "name": "British Council Thailand - ทุนการศึกษา",
+      "url": "https://www.britishcouncil.or.th/scholarship",
+      "type": "international",
+      "fields": ["AI", "Data Science", "ไฟฟ้า", "อิเล็กทรอนิกส์", "ทุกสาขา"],
+      "scrape_config": {
+        "method": "beautifulsoup",
+        "title_selector": "h2, h3, .title, .news-title, article h3, .card-title",
+        "deadline_selector": ".date, .deadline, time",
+        "amount_selector": ".amount, .budget",
+        "eligibility_selector": ".description, .summary, .detail",
+        "link_selector": "a[href*='scholarship'], a[href*='fellowship'], a",
+        "link_base_url": "https://www.britishcouncil.or.th",
+        "pagination": {
+          "enabled": false,
+          "next_button_selector": "",
+          "max_pages": 1
+        }
+      }
+    },
+
+    {
+      "name": "SEABER - ทุนวิจัยทางทะเล",
+      "url": "https://www.sea-ber.org",
+      "type": "international",
+      "fields": ["วิศวกรรมเครื่องกล", "หุ่นยนต์", "AI", "Smart Manufacturing", "Marine Engineering"],
+      "scrape_config": {
+        "method": "beautifulsoup",
+        "title_selector": "h2, h3, .title, .news-title, article h3, .card-title",
+        "deadline_selector": ".date, .deadline, time",
+        "amount_selector": ".amount, .budget",
+        "eligibility_selector": ".description, .summary, .detail",
+        "link_selector": "a[href*='ทุน'], a[href*='scholarship'], a[href*='fellowship'], a",
+        "link_base_url": "https://www.sea-ber.org",
+        "pagination": {
+          "enabled": false,
+          "next_button_selector": "",
+          "max_pages": 1
+        }
+      }
+    },
+
+    {
+      "name": "US Embassy Bangkok - ทุนการศึกษา",
+      "url": "https://th.usembassy.gov/education-culture/scholarships",
+      "type": "international",
+      "fields": ["วิศวกรรมเครื่องกล", "หุ่นยนต์", "วิศวกรรมการแพทย์", "การแพทย์", "ไฟฟ้า", "AI", "ทุกสาขา"],
+      "scrape_config": {
+        "method": "beautifulsoup",
+        "title_selector": "h2, h3, .title, .news-title, article h3",
+        "deadline_selector": ".date, .deadline, time",
+        "amount_selector": ".amount, .budget",
+        "eligibility_selector": ".description, .summary, .detail",
+        "link_selector": "a[href*='scholarship'], a[href*='fellowship'], a",
+        "link_base_url": "https://th.usembassy.gov",
+        "pagination": {
+          "enabled": false,
+          "next_button_selector": "",
+          "max_pages": 1
+        }
+      }
+    },
+
+    {
+      "name": "AFS Thailand - ทุนการศึกษา",
+      "url": "https://afsthailand.org/scholarship",
+      "type": "international",
+      "fields": ["วิศวกรรมเครื่องกล", "หุ่นยนต์", "ไฟฟ้า", "AI", "ทุกสาขา"],
+      "scrape_config": {
+        "method": "beautifulsoup",
+        "title_selector": "h2, h3, .title, .news-title, article h3, .card-title",
+        "deadline_selector": ".date, .deadline, time",
+        "amount_selector": ".amount, .budget",
+        "eligibility_selector": ".description, .summary, .detail",
+        "link_selector": "a[href*='scholarship'], a[href*='fellowship'], a",
+        "link_base_url": "https://afsthailand.org",
+        "pagination": {
+          "enabled": false,
+          "next_button_selector": "",
+          "max_pages": 1
+        }
+      }
+    },
+
+    {
+      "name": "สำนักงานปลัดกระทรวงกลาโหม - ทุนการศึกษา",
+      "url": "https://www.mhesi.go.th/ทุนการศึกษา",
+      "type": "government",
+      "fields": ["วิศวกรรมเครื่องกล", "หุ่นยนต์", "ไฟฟ้า", "อิเล็กทรอนิกส์", "AI", "ทุกสาขา"],
+      "scrape_config": {
+        "method": "beautifulsoup",
+        "title_selector": "h2, h3, .title, .news-title, article h3, .card-title",
+        "deadline_selector": ".date, .deadline, time",
+        "amount_selector": ".amount, .budget",
+        "eligibility_selector": ".description, .summary, .detail",
+        "link_selector": "a[href*='ทุน'], a[href*='scholarship'], a",
+        "link_base_url": "https://www.mhesi.go.th",
+        "pagination": {
+          "enabled": false,
+          "next_button_selector": "",
+          "max_pages": 1
+        }
+      }
+    },
+
+    {
+      "name": "สำนักงานคณะกรรมการส่งเสริมวิทยาศาสตร์ วิจัยและนวัตกรรม (สกร.)",
+      "url": "https://www.tsri.or.th",
+      "type": "government",
+      "fields": ["วิศวกรรมเครื่องกล", "หุ่นยนต์", "วิศวกรรมการแพทย์", "การแพทย์", "ไฟฟ้า", "AI", "นวัตกรรม"],
+      "scrape_config": {
+        "method": "beautifulsoup",
+        "title_selector": "h2, h3, .title, .news-title, article h3, .card-title",
+        "deadline_selector": ".date, .deadline, time",
+        "amount_selector": ".amount, .budget",
+        "eligibility_selector": ".description, .summary, .detail",
+        "link_selector": "a[href*='ทุน'], a[href*='scholarship'], a[href*='research'], a",
+        "link_base_url": "https://www.tsri.or.th",
+        "pagination": {
+          "enabled": false,
+          "next_button_selector": "",
+          "max_pages": 1
+        }
+      }
+    },
+
+    {
+      "name": "สถาบันวิจัยวิทยาศาสตร์และเทคโนโลยีแห่งประเทศไทย (TISTR)",
+      "url": "https://www.tistr.or.th",
+      "type": "government",
+      "fields": ["วิศวกรรมเครื่องกล", "หุ่นยนต์", "ไฟฟ้า", "อิเล็กทรอนิกส์", "AI", "Smart Manufacturing"],
+      "scrape_config": {
+        "method": "beautifulsoup",
+        "title_selector": "h2, h3, .title, .news-title, article h3, .card-title",
+        "deadline_selector": ".date, .deadline, time",
+        "amount_selector": ".amount, .budget",
+        "eligibility_selector": ".description, .summary, .detail",
+        "link_selector": "a[href*='ทุน'], a[href*='scholarship'], a",
+        "link_base_url": "https://www.tistr.or.th",
+        "pagination": {
+          "enabled": false,
+          "next_button_selector": "",
+          "max_pages": 1
+        }
+      }
+    },
+
+    {
+      "name": "สำนักงานพัฒนาเทคโนโลยีอวกาศและภูมิสารสนเทศ (GISTDA)",
+      "url": "https://www.gistda.or.th",
+      "type": "government",
+      "fields": ["AI", "Data Science", "ไฟฟ้า", "อิเล็กทรอนิกส์", "Smart Manufacturing"],
+      "scrape_config": {
+        "method": "beautifulsoup",
+        "title_selector": "h2, h3, .title, .news-title, article h3, .card-title",
+        "deadline_selector": ".date, .deadline, time",
+        "amount_selector": ".amount, .budget",
+        "eligibility_selector": ".description, .summary, .detail",
+        "link_selector": "a[href*='ทุน'], a[href*='scholarship'], a",
+        "link_base_url": "https://www.gistda.or.th",
+        "pagination": {
+          "enabled": false,
+          "next_button_selector": "",
+          "max_pages": 1
+        }
+      }
+    }
+
+  ]
+}
